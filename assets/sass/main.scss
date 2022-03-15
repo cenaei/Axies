@@ -1,0 +1,78 @@
+@import "reset";
+@import "color";
+@import "mixin";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  background-color: $background;
+  color: $fullWhite;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  @include flexBetween(row);
+  margin: 1rem 1rem 2rem;
+
+  &__menu {
+    &--items {
+      @include flexBetween(row);
+    }
+  }
+
+  li {
+    margin: 0 0.5rem;
+  }
+
+  &__theme {
+    @include flexBetween(row);
+    &--items {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+.hero {
+  margin: .5rem 2.2rem;
+
+  &__wrapper {
+    @include flex(column);
+  }
+
+  &__top {
+    @include flexBetween(row);
+    margin-bottom: 1.5rem;
+  }
+
+  &__left {
+    @include flex(column);
+    max-width: 50%;
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 54px;
+      line-height: 68px;
+    }
+    p {
+      color: $darkGray;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      line-height: 42px;
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  &__right {
+    @include flexCenter(row);
+  }
+}
+
+.features {
+  @include flexBetween(row);
+  &__div {
+    &--blue --green,--purple,--red {
+      @include flexBetween(column);
+    }
+  }
+}

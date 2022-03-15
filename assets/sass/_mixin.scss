@@ -1,0 +1,44 @@
+@mixin flex($flex) {
+  display: flex;
+  flex-direction: $flex;
+}
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenter($flex) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexAround($flex) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flexBetween($flex) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexEvenly($flex) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin d-flex($f, $j, $a) {
+  display: flex;
+  flex-direction: $f;
+  justify-content: $j;
+  align-items: $a;
+}
