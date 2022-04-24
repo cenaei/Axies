@@ -29,12 +29,45 @@ button {
     }
   }
 
+  ul {
+
+    li {
+      width: 100%;
+
+      ul {
+        position: relative !important;
+        z-index: 99;
+
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease;
+        margin-top: 1rem;
+        left: 0;
+        display: none;
+
+        li {
+          clear: both;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   li {
     margin: 0 2rem;
+    transition-duration: 0.5s;
   }
 
   li:hover {
     cursor: pointer;
+  }
+
+  ul li:hover > ul,
+  ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
   }
 
   // &__search {
@@ -59,7 +92,7 @@ button {
 }
 
 .hero {
-  margin: .5rem 2.2rem;
+  margin: 0.5rem 2.2rem;
 
   &__wrapper {
     @include flex(column);
@@ -101,7 +134,10 @@ button {
 .features {
   @include flexBetween(row);
   &__div {
-    &--blue,&--green,&--purple,&--red {
+    &--blue,
+    &--green,
+    &--purple,
+    &--red {
       @include flexBetween(column);
       margin: 0 2rem;
       img {
@@ -142,7 +178,6 @@ button {
         background-color: $red-f;
       }
     }
-    
   }
 }
 
@@ -151,25 +186,24 @@ button {
   background-color: black;
   margin: 2rem -4rem;
   padding: 2rem 2rem;
-  
+
   &__title {
     @include flexBetween(row);
+    width: 100vw;
     h2 {
       font-weight: 700;
       font-size: 2.5rem;
       // margin-right: 110rem;
     }
     button {
-      padding: 0 0 .5rem;
+      padding: 0 0 0.5rem;
       border-radius: 0;
       border: none;
       border-bottom: 1px solid $purple;
       background-color: black;
     }
   }
-
   // &__content {
-
   // }
 }
 
@@ -177,14 +211,20 @@ button {
   @include flexBetween(column);
 
   &__title {
-    @include flexBetween(row);
+    // @include flexBetween(row);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: red;
+    width: 100%;
     h2 {
       font-weight: 700;
       font-size: 2.5rem;
       // margin-right: 110rem;
     }
     button {
-      padding: 0 0 .5rem;
+      padding: 0 0 0.5rem;
       border-radius: 0;
       border: none;
       border-bottom: 1px solid $purple;
@@ -195,9 +235,11 @@ button {
     @include flexBetween(row);
     margin: 2rem 0;
     img {
-      margin: .3rem;
+      margin: 0.3rem;
     }
-    &--first, &--second, &--third {
+    &--first,
+    &--second,
+    &--third {
       // max-width: 30%;
       margin: 0 1rem;
       padding: 1rem;
@@ -205,11 +247,10 @@ button {
       background-color: $background-gray;
     }
 
-    
     &--content {
       @include flexBetween(row);
     }
-    
+
     &--info {
       @include d-flex(column, flex-start, flex-start);
       // justify-self: flex-start;
@@ -219,7 +260,7 @@ button {
       @include flexEvenly(row);
       background-color: $background;
       border-radius: 2rem;
-      padding: .4rem .8rem .4rem .4rem;
+      padding: 0.4rem 0.8rem 0.4rem 0.4rem;
     }
   }
 
