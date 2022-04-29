@@ -30,7 +30,6 @@ button {
   }
 
   ul {
-
     li {
       width: 100%;
 
@@ -181,10 +180,15 @@ button {
   }
 }
 
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
 .live {
   @include flexBetween(column);
   background-color: black;
-  margin: 2rem -4rem;
+  // margin: 2rem 4rem;
   padding: 2rem 2rem;
 
   &__title {
@@ -276,4 +280,123 @@ button {
       font-size: 1rem;
     }
   }
+}
+
+.seller {
+  @include flexBetween(column);
+
+  &__title {
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+}
+
+.today {
+
+  &__title {
+
+  }
+
+  &__label {
+
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+
+  &__more {
+
+  }
+
+}
+
+.footer {
+  background-color: Black;
+  @include flexBetween(row);
+  padding: 4rem 10rem 5rem;
+
+  h5 {
+    font: {
+      size: 2.2rem;
+      weight: 500;
+    }
+    margin-bottom: 4rem;
+  }
+
+  &__info {
+    align-self: flex-start;
+
+    &--subtitle {
+      p {
+        font: {
+          size: 1.7rem;
+          weight: 200;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    ul {
+      li {
+        font: {
+          size: 1.8rem;
+          weight: 300;
+        }
+        margin: 1.7rem 0;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__us {
+    align-self: flex-start;
+
+    input {
+      background-color: transparent;
+      border: 1px solid $purple;
+      border-radius: 1rem;
+      font: {
+        size: 1.5rem;
+        weight: 400;
+      }
+      padding: 1rem 2rem;
+      color: $fullWhite;
+    }
+
+    &--socialmedia {
+      margin-top: 2rem;
+      @include flexBetween(row);
+
+      a {
+        margin: 0 .3rem;
+        background-color: $darkGray;
+        color: $fullWhite;
+        padding: .5rem;
+        border-radius: 1rem;
+        width: 4rem;
+        text-align: center;
+        i {
+          font-size: 2rem;
+        }
+        &:hover {
+          background-color: $purple;
+        }
+      }
+    }
+  }
+
 }
