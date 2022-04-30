@@ -675,6 +675,7 @@ h2 {
 }
 
 .today__content {
+  margin: 3rem 4rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -683,6 +684,76 @@ h2 {
       grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
+}
+
+.today__post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3rem;
+  background-color: #343444;
+  padding: 2rem;
+}
+
+.today__post img {
+  border-radius: 3rem;
+}
+
+.today__post--name {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.today__post--profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.today__post--profile img {
+  width: 6rem;
+  border-radius: 2rem;
+}
+
+.today__post--bid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 .today__more {
