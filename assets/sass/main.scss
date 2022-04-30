@@ -226,12 +226,7 @@ h2 {
   @include flexBetween(column);
   margin: 1.5rem 0;
   &__title {
-    // @include flexBetween(row);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    // background-color: red;
+    @include flexBetween(row);
     width: 100%;
     
     button {
@@ -339,13 +334,34 @@ h2 {
 }
 
 .today {
+  @include flexBetween(column);
 
   &__title {
+    @include flexBetween(row);
+    align-self: flex-start;
+    width: 100%;
 
+    button {
+      padding: 0 0 0.5rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $purple;
+    }
   }
 
   &__label {
-
+    @include flexBetween(row);
+    width: 100%;
+    
+    button {
+      padding: 1rem;
+      margin: 0 .7rem;
+      font: {
+        size: 1.2rem;
+        weight: 500;
+      }
+      border-color: $darkGray;
+    }
   }
 
   &__content {
@@ -357,7 +373,16 @@ h2 {
   }
 
   &__more {
-
+    margin: 3rem 0;
+    button {
+      padding: 1.1rem 4rem;
+      margin: 0 .7rem;
+      font: {
+        size: 1.2rem;
+        weight: 500;
+      }
+      border-color: $darkGray;
+    }
   }
 
 }
