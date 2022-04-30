@@ -19,6 +19,12 @@ button {
   padding: 1.4rem 3.6rem;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.3rem;
+}
+
 .header {
   @include flexBetween(row);
   padding: 1rem 0;
@@ -32,6 +38,15 @@ button {
   ul {
     li {
       width: 100%;
+      
+      a {
+        color: $fullWhite;
+        text-decoration: none;
+        font: {
+          size: 1.6rem;
+          weight: 500;
+        }
+      }
 
       ul {
         position: relative !important;
@@ -188,17 +203,13 @@ button {
 .live {
   @include flexBetween(column);
   background-color: black;
-  // margin: 2rem 4rem;
+  margin: 1.5rem 0;
   padding: 2rem 2rem;
 
   &__title {
     @include flexBetween(row);
     width: 100vw;
-    h2 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      // margin-right: 110rem;
-    }
+
     button {
       padding: 0 0 0.5rem;
       border-radius: 0;
@@ -213,7 +224,7 @@ button {
 
 .popular {
   @include flexBetween(column);
-
+  margin: 1.5rem 0;
   &__title {
     // @include flexBetween(row);
     display: flex;
@@ -222,11 +233,7 @@ button {
     align-items: center;
     // background-color: red;
     width: 100%;
-    h2 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      // margin-right: 110rem;
-    }
+    
     button {
       padding: 0 0 0.5rem;
       border-radius: 0;
@@ -284,16 +291,50 @@ button {
 
 .seller {
   @include flexBetween(column);
+  margin: 1.5rem 0;
 
   &__title {
+    align-self: flex-start;    
   }
 
   &__content {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    grid-column-gap: 7rem;
+    grid-row-gap: 7rem;
+
+    img {
+      width: 8.5rem;
+      border-radius: 3rem;
+
+      &:hover {
+        border-radius: 4rem;
+      }
+    }
+  }
+
+  &__profile {
+    @include flexBetween(row);
+
+    &--content {
+      @include flexBetween(column);
+    }
+    
+    li {
+      align-self: flex-start;
+      margin: 1rem 0;
+      font: {
+        size: 1.4rem;
+        weight: 400;
+      }
+    }
+    &--price {
+      font: {
+        size: 1rem;
+        weight: 300;
+      }
+    }
   }
 }
 

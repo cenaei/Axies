@@ -74,6 +74,12 @@ button {
   padding: 1.4rem 3.6rem;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.3rem;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,6 +116,13 @@ button {
 
 .header ul li {
   width: 100%;
+}
+
+.header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .header ul li ul {
@@ -343,6 +356,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   background-color: black;
+  margin: 1.5rem 0;
   padding: 2rem 2rem;
 }
 
@@ -361,11 +375,6 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 100vw;
-}
-
-.live__title h2 {
-  font-weight: 700;
-  font-size: 2.5rem;
 }
 
 .live__title button {
@@ -390,6 +399,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1.5rem 0;
 }
 
 .popular__title {
@@ -407,11 +417,6 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-}
-
-.popular__title h2 {
-  font-weight: 700;
-  font-size: 2.5rem;
 }
 
 .popular__title button {
@@ -529,6 +534,12 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1.5rem 0;
+}
+
+.seller__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .seller__content {
@@ -538,8 +549,62 @@ button {
       grid-template-columns: repeat(5, 1fr);
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-column-gap: 7rem;
+  grid-row-gap: 7rem;
+}
+
+.seller__content img {
+  width: 8.5rem;
+  border-radius: 3rem;
+}
+
+.seller__content img:hover {
+  border-radius: 4rem;
+}
+
+.seller__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.seller__profile--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.seller__profile li {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.seller__profile--price {
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .today__content {
