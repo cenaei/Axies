@@ -336,7 +336,7 @@ h2 {
 }
 
 .swiper {
-  width: 1200px;
+  width: 1400px;
   height: 400px;
 }
 
@@ -394,6 +394,23 @@ h2 {
   border-radius: 2rem;
 }
 
+.myswiper__profile--name {
+  justify-self: flex-start;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.myswiper__profile--name p {
+  font-size: 1rem;
+}
+
+.myswiper__profile--label button {
+  padding: .2rem 1.1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #4E3FEE;
+}
+
 .myswiper__bid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -409,6 +426,15 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+.myswiper__bid--like button {
+  padding: .2rem 1.1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #202020;
+  border-color: #202020;
+  border-radius: .7rem;
 }
 
 .live {

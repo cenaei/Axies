@@ -195,7 +195,7 @@ h2 {
 }
 
 .swiper {
-  width: 1200px; //temp
+  width: 1400px; //temp
   height: 400px; //temp
 }
 
@@ -230,11 +230,23 @@ h2 {
     }
   
     &--name {
-  
+      justify-self: flex-start;
+      font: {
+        size: 1.2rem;
+        weight: 400;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   
     &--label {
-  
+      button {
+        padding: .2rem 1.1rem;
+        font-size: 1.1rem;
+        color: $fullWhite;
+        background-color: $purple;
+      }
     }
   }
 
@@ -242,11 +254,20 @@ h2 {
     @include flexBetween(row);
     width: 100%;
       &--price {
-    
+        
       }
     
       &--like {
-    
+        button {
+          padding: .2rem 1.1rem;
+          font-size: 1.1rem;
+          color: $fullWhite;
+          background-color: $black;
+          border: {
+            color: $black;
+            radius: .7rem;
+          }
+        }
       }
   }
 
