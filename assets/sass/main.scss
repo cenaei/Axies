@@ -7,7 +7,6 @@ body {
   background-color: $background;
   color: $fullWhite;
   font-family: "Roboto", sans-serif;
-  margin: 0 4rem;
 }
 
 button {
@@ -27,7 +26,7 @@ h2 {
 
 .header {
   @include flexBetween(row);
-  padding: 1rem 0;
+  padding: 1rem 4rem;
   font-size: 1.4rem;
   &__menu {
     &--items {
@@ -106,7 +105,7 @@ h2 {
 }
 
 .hero {
-  margin: 0.5rem 2.2rem;
+  margin: 0.5rem 8rem;
 
   &__wrapper {
     @include flex(column);
@@ -196,19 +195,24 @@ h2 {
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  width: 1200px;
+  height: 400px;
+
+  &-slide {
+    @include flexCenter(column);
+    background-color: $darkGray;
+  }
 }
 
 .live {
   @include flexBetween(column);
   background-color: black;
-  margin: 1.5rem 0;
-  padding: 2rem 2rem;
+  margin: 3rem 0;
+  padding: 5rem 8rem;
 
   &__title {
     @include flexBetween(row);
-    width: 100vw;
+    width: 100%;
 
     button {
       padding: 0 0 0.5rem;
@@ -224,7 +228,7 @@ h2 {
 
 .popular {
   @include flexBetween(column);
-  margin: 1.5rem 0;
+  margin: 1.5rem 8rem;
   &__title {
     @include flexBetween(row);
     width: 100%;
@@ -286,7 +290,7 @@ h2 {
 
 .seller {
   @include flexBetween(column);
-  margin: 1.5rem 0;
+  margin: 3rem 8rem;
 
   &__title {
     align-self: flex-start;    
@@ -297,7 +301,7 @@ h2 {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 7rem;
-    grid-row-gap: 7rem;
+    grid-row-gap: 2rem;
 
     img {
       width: 8.5rem;
@@ -335,7 +339,7 @@ h2 {
 
 .today {
   @include flexBetween(column);
-
+  margin: 3rem 8rem;
   &__title {
     @include flexBetween(row);
     align-self: flex-start;
@@ -351,6 +355,7 @@ h2 {
 
   &__label {
     @include flexBetween(row);
+    margin: 1.5rem 0;
     width: 100%;
     
     button {
@@ -365,7 +370,7 @@ h2 {
   }
 
   &__content {
-    margin: 3rem 4rem;
+    margin: 1rem 4rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);

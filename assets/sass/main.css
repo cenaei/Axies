@@ -62,7 +62,6 @@ body {
   background-color: #14141F;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  margin: 0 4rem;
 }
 
 button {
@@ -94,7 +93,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem 0;
+  padding: 1rem 4rem;
   font-size: 1.4rem;
 }
 
@@ -189,7 +188,7 @@ h2 {
 }
 
 .hero {
-  margin: 0.5rem 2.2rem;
+  margin: 0.5rem 8rem;
 }
 
 .hero__wrapper {
@@ -337,8 +336,25 @@ h2 {
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  width: 1200px;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ADADB0;
 }
 
 .live {
@@ -356,8 +372,8 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   background-color: black;
-  margin: 1.5rem 0;
-  padding: 2rem 2rem;
+  margin: 3rem 0;
+  padding: 5rem 8rem;
 }
 
 .live__title {
@@ -374,7 +390,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .live__title button {
@@ -399,7 +415,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1.5rem 0;
+  margin: 1.5rem 8rem;
 }
 
 .popular__title {
@@ -534,7 +550,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1.5rem 0;
+  margin: 3rem 8rem;
 }
 
 .seller__title {
@@ -550,7 +566,7 @@ h2 {
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 7rem;
-  grid-row-gap: 7rem;
+  grid-row-gap: 2rem;
 }
 
 .seller__content img {
@@ -621,6 +637,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 3rem 8rem;
 }
 
 .today__title {
@@ -663,6 +680,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1.5rem 0;
   width: 100%;
 }
 
@@ -675,7 +693,7 @@ h2 {
 }
 
 .today__content {
-  margin: 3rem 4rem;
+  margin: 1rem 4rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
