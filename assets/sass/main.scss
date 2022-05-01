@@ -195,13 +195,61 @@ h2 {
 }
 
 .swiper {
-  width: 1200px;
-  height: 400px;
+  width: 1200px; //temp
+  height: 400px; //temp
+}
 
-  &-slide {
-    @include flexCenter(column);
-    background-color: $darkGray;
+.myswiper {
+  @include flexCenter(column);
+  background-color: $background-gray;
+  border-radius: 3rem;
+  padding: 2rem;
+
+  &__picture {
+    img {
+      border-radius: 3rem;
+      width: 20rem; //temp
+    }
   }
+
+  &__title {
+    align-self: flex-start;
+    margin: 1.5rem 0;
+    font: {
+      size: 1.4rem;
+      weight: 500;
+    }
+  }
+
+  &__profile {
+    @include flexBetween(row);
+    width: 100%;
+    img {
+      width: 6rem;
+      border-radius: 2rem;
+    }
+  
+    &--name {
+  
+    }
+  
+    &--label {
+  
+    }
+  }
+
+  &__bid {
+    @include flexBetween(row);
+    width: 100%;
+      &--price {
+    
+      }
+    
+      &--like {
+    
+      }
+  }
+
 }
 
 .live {
