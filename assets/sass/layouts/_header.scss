@@ -5,13 +5,14 @@
   &__menu {
     &--items {
       @include flexBetween(row);
+      gap: 2rem;
     }
   }
 
   ul {
     li {
       width: 100%;
-      
+      position: relative;
       a {
         color: $fullWhite;
         text-decoration: none;
@@ -22,28 +23,24 @@
       }
 
       ul {
-        position: relative !important;
+        position: absolute !important;
         z-index: 99;
-
         visibility: hidden;
         opacity: 0;
-        position: absolute;
         transition: all 0.5s ease;
-        margin-top: 1rem;
         left: 0;
         display: none;
 
+        padding: 1rem;
+        min-width: 15rem;
+
         li {
           clear: both;
-          width: 100%;
+          background-color: $background-gray;
+          padding: .5rem;
         }
       }
     }
-  }
-
-  li {
-    margin: 0 2rem;
-    transition-duration: 0.5s;
   }
 
   li:hover {
