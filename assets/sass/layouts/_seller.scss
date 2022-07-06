@@ -1,0 +1,48 @@
+.seller {
+  @include flexBetween(column);
+  margin: 3rem 8rem;
+
+  &__title {
+    align-self: flex-start;    
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 7rem;
+    grid-row-gap: 2rem;
+
+    img {
+      width: 8.5rem;
+      border-radius: 3rem;
+
+      &:hover {
+        border-radius: 4rem;
+      }
+    }
+  }
+
+  &__profile {
+    @include flexBetween(row);
+
+    &--content {
+      @include flexBetween(column);
+    }
+    
+    li {
+      align-self: flex-start;
+      margin: 1rem 0;
+      font: {
+        size: 1.4rem;
+        weight: 400;
+      }
+    }
+    &--price {
+      font: {
+        size: 1rem;
+        weight: 300;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.live {
+  @include flexBetween(column);
+  background-color: black;
+  margin: 3rem 0;
+  padding: 5rem 8rem;
+
+  &__title {
+    @include flexBetween(row);
+    width: 100%;
+
+    button {
+      padding: 0 0 0.5rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $purple;
+      background-color: black;
+    }
+  }
+  // &__content {
+  // }
+}

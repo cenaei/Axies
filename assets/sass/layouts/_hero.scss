@@ -1,0 +1,39 @@
+.hero {
+  margin: 0.5rem 8rem;
+
+  &__wrapper {
+    @include flex(column);
+  }
+
+  &__top {
+    @include flexBetween(row);
+    margin-bottom: 1.5rem;
+  }
+
+  &__left {
+    @include flex(column);
+    max-width: 50%;
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 54px;
+      line-height: 68px;
+    }
+    p {
+      color: $darkGray;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      line-height: 42px;
+      margin-bottom: 1.3rem;
+    }
+    span {
+      color: $purple-text;
+    }
+  }
+
+  &__right {
+    @include flexCenter(row);
+  }
+}

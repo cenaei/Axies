@@ -1,0 +1,78 @@
+.swiper {
+  width: 1400px; //temp
+  height: 400px; //temp
+}
+
+.myswiper {
+  @include flexCenter(column);
+  background-color: $background-gray;
+  border-radius: 3rem;
+  padding: 2rem;
+
+  &__picture {
+    img {
+      border-radius: 3rem;
+      width: 20rem; //temp
+    }
+  }
+
+  &__title {
+    align-self: flex-start;
+    margin: 1.5rem 0;
+    font: {
+      size: 1.4rem;
+      weight: 500;
+    }
+  }
+
+  &__profile {
+    @include flexBetween(row);
+    width: 100%;
+    img {
+      width: 6rem;
+      border-radius: 2rem;
+    }
+  
+    &--name {
+      justify-self: flex-start;
+      font: {
+        size: 1.2rem;
+        weight: 400;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  
+    &--label {
+      button {
+        padding: .2rem 1.1rem;
+        font-size: 1.1rem;
+        color: $fullWhite;
+        background-color: $purple;
+      }
+    }
+  }
+
+  &__bid {
+    @include flexBetween(row);
+    width: 100%;
+      &--price {
+        
+      }
+    
+      &--like {
+        button {
+          padding: .2rem 1.1rem;
+          font-size: 1.1rem;
+          color: $fullWhite;
+          background-color: $black;
+          border: {
+            color: $black;
+            radius: .7rem;
+          }
+        }
+      }
+  }
+
+}

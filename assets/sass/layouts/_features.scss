@@ -1,0 +1,49 @@
+.features {
+  @include flexBetween(row);
+  &__div {
+    &--blue,
+    &--green,
+    &--purple,
+    &--red {
+      @include flexBetween(column);
+      margin: 0 2rem;
+      img {
+        padding: 1rem;
+        border-radius: 1.6rem;
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+      h3 {
+        margin: 1rem 0;
+        font-size: 1.7rem;
+      }
+      p {
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        text-align: center;
+        color: $gray-text;
+      }
+    }
+    &--blue {
+      img {
+        background-color: $blue-f;
+      }
+    }
+    &--green {
+      img {
+        background-color: $green-f;
+      }
+    }
+    &--purple {
+      img {
+        background-color: $purple-f;
+      }
+    }
+    &--red {
+      img {
+        background-color: $red-f;
+      }
+    }
+  }
+}

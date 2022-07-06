@@ -1,0 +1,92 @@
+.today {
+  @include flexBetween(column);
+  margin: 3rem 8rem;
+  &__title {
+    @include flexBetween(row);
+    align-self: flex-start;
+    width: 100%;
+
+    button {
+      padding: 0 0 0.5rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $purple;
+    }
+  }
+
+  &__label {
+    @include flexBetween(row);
+    margin: 1.5rem 0;
+    width: 100%;
+    
+    button {
+      padding: 1rem;
+      margin: 0 .7rem;
+      font: {
+        size: 1.2rem;
+        weight: 500;
+      }
+      border-color: $darkGray;
+    }
+  }
+
+  &__content {
+    margin: 1rem 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+
+  &__post {
+    @include flexBetween(column);
+    border-radius: 3rem;
+    background-color: $background-gray;
+    padding: 2rem;
+
+    img {
+      border-radius: 3rem;
+    }
+
+    &--name {
+      align-self: flex-start;
+      margin: 1.5rem 0;
+      font: {
+        size: 1.4rem;
+        weight: 500;
+      }
+    }
+
+    &--profile {
+      @include flexBetween(row);
+      width: 100%;
+      img {
+        width: 6rem;
+        border-radius: 2rem;
+      }
+      
+    }
+
+    &--bid {
+      @include flexBetween(row);
+      width: 100%;
+    }
+
+  }
+
+  &__more {
+    margin: 3rem 0;
+    button {
+      padding: 1.1rem 4rem;
+      margin: 0 .7rem;
+      font: {
+        size: 1.2rem;
+        weight: 500;
+      }
+      border-color: $darkGray;
+    }
+  }
+
+}

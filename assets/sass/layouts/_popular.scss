@@ -1,0 +1,61 @@
+.popular {
+  @include flexBetween(column);
+  margin: 1.5rem 8rem;
+  &__title {
+    @include flexBetween(row);
+    width: 100%;
+    
+    button {
+      padding: 0 0 0.5rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $purple;
+    }
+  }
+
+  &__cards {
+    @include flexBetween(row);
+    margin: 2rem 0;
+    img {
+      margin: 0.3rem;
+    }
+    &--first,
+    &--second,
+    &--third {
+      // max-width: 30%;
+      margin: 0 1rem;
+      padding: 1rem;
+      border-radius: 2rem;
+      background-color: $background-gray;
+    }
+
+    &--content {
+      @include flexBetween(row);
+    }
+
+    &--info {
+      @include d-flex(column, flex-start, flex-start);
+      // justify-self: flex-start;
+    }
+
+    &--likes {
+      @include flexEvenly(row);
+      background-color: $background;
+      border-radius: 2rem;
+      padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+    }
+  }
+
+  &__info--title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__info--name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    span {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+  }
+}
