@@ -42,3 +42,9 @@
   justify-content: $j;
   align-items: $a;
 }
+
+@mixin center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
