@@ -984,12 +984,15 @@
       </div>
     </footer>
 
-    <script src="./app.js"></script>
     <script>
       const swiper = new Swiper(".swiper", {
         slidesPerView: 5,
         spaceBetween: 10,
         freeMode: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -1003,6 +1006,7 @@
           prevEl: ".swiper-button-prev",
         },
       });
-    </script>
+      </script>
+      <script src="./app.js"></script>
   </body>
 </html>
