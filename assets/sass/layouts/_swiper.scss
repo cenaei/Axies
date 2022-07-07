@@ -9,7 +9,13 @@
   border-radius: 3rem;
   padding: 2rem;
 
+  &:hover .myswiper__picture {
+    transform: scale(1.1);
+    overflow: hidden;
+  }
+  
   &__picture {
+    transition: transform .2s;
     img {
       border-radius: 3rem;
       width: 20rem; //temp
