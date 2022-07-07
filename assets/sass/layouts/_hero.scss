@@ -28,12 +28,30 @@
       line-height: 42px;
       margin-bottom: 1.3rem;
     }
-    span {
+    .monster {
       color: $purple-text;
+    }
+    .extraordinary {
+      position: relative;
+      span {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        text-transform: lowercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(0.2s * var(--i));
+      }
     }
   }
 
   &__right {
     @include flexCenter(row);
+  }
+}
+
+// Animations
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
   }
 }

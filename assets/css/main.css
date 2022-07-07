@@ -302,8 +302,23 @@ h2 {
   margin-bottom: 1.3rem;
 }
 
-.hero__left span {
+.hero__left .monster {
   color: #9550E5;
+}
+
+.hero__left .extraordinary {
+  position: relative;
+}
+
+.hero__left .extraordinary span {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: lowercase;
+  -webkit-animation: flip 2s infinite;
+          animation: flip 2s infinite;
+  -webkit-animation-delay: calc(0.2s * var(--i));
+          animation-delay: calc(0.2s * var(--i));
 }
 
 .hero__right {
@@ -320,6 +335,20 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@-webkit-keyframes flip {
+  0%, 80% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes flip {
+  0%, 80% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
 }
 
 .features {
