@@ -7,6 +7,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }, 2500)
 });
 
-searchEl.addEventListener('click', (event) => {
-  
-})
+// searchEl.addEventListener('click', (event) => {
+
+// })

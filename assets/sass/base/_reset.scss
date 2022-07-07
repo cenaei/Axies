@@ -46,8 +46,11 @@ button {
   border-radius: 3rem;
   margin: 0.3rem;
   padding: 1.4rem 3.6rem;
+  transition: background 0.5s ease-in-out;
   &:hover {
     cursor: pointer;
+    background-color: $purple;
+    color: $background;
   }
 }
 

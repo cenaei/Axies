@@ -5,9 +5,10 @@
     padding: 1rem;
     border-radius: 50%;
     color: $purple;
+    transition: background 0.5s ease-in-out;
     &:hover {
       cursor: pointer;
-      border-width: 2px;
+      background-color: $purple;
     }
     &:hover input {
       visibility: block;
