@@ -1,5 +1,5 @@
 .features {
-  @include flexBetween(row);
+  @include grid(22rem);
   &__div {
     &--blue,
     &--green,

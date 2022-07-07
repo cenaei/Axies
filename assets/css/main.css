@@ -378,19 +378,16 @@ h2 {
 }
 
 .features {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  overflow: auto;
+  resize: horizontal;
+  grid-column-gap: 10rem;
+  grid-row-gap: 0px;
 }
 
 .features__div--blue, .features__div--green, .features__div--purple, .features__div--red {
