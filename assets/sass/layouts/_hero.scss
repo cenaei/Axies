@@ -36,10 +36,20 @@
       span {
         position: relative;
         display: inline-block;
-        color: #fff;
+        color: $white;
         text-transform: lowercase;
         animation: flip 2s infinite;
         animation-delay: calc(0.2s * var(--i));
+      }
+    }
+    &--btn {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.4rem;
+      button {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
       }
     }
   }

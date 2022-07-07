@@ -78,6 +78,10 @@ button:hover {
   color: #14141F;
 }
 
+button:hover img {
+  color: #14141F;
+}
+
 h2 {
   font-weight: 700;
   font-size: 2.5rem;
@@ -313,12 +317,34 @@ h2 {
 .hero__left .extraordinary span {
   position: relative;
   display: inline-block;
-  color: #fff;
+  color: #fcfcfc;
   text-transform: lowercase;
   -webkit-animation: flip 2s infinite;
           animation: flip 2s infinite;
   -webkit-animation-delay: calc(0.2s * var(--i));
           animation-delay: calc(0.2s * var(--i));
+}
+
+.hero__left--btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 1.4rem;
+}
+
+.hero__left--btn button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
 }
 
 .hero__right {
