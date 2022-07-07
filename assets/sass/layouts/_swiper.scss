@@ -13,9 +13,9 @@
     transform: scale(1.1);
     overflow: hidden;
   }
-  
+
   &__picture {
-    transition: transform .2s;
+    transition: transform 0.2s;
     img {
       border-radius: 3rem;
       width: 20rem; //temp
@@ -38,21 +38,21 @@
       width: 6rem;
       border-radius: 2rem;
     }
-  
+
     &--name {
       justify-self: flex-start;
       font: {
-        size: 1.2rem;
+        size: 1.4rem;
         weight: 400;
       }
       p {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
-  
+
     &--label {
       button {
-        padding: .2rem 1.1rem;
+        padding: 0.2rem 1.1rem;
         font-size: 1.1rem;
         color: $fullWhite;
         background-color: $purple;
@@ -62,23 +62,32 @@
 
   &__bid {
     @include flexBetween(row);
+    font-size: 1.7rem;
     width: 100%;
-      &--price {
-        
+    margin: 1rem 0;
+    .price {
+      font-size: 1.6rem;
+      margin-top: 0.5rem;
+      span {
+        font-size: 1.4rem;
+        color: #a7a7a7;
       }
-    
-      &--like {
-        button {
-          padding: .2rem 1.1rem;
-          font-size: 1.1rem;
-          color: $fullWhite;
-          background-color: $black;
-          border: {
-            color: $black;
-            radius: .7rem;
-          }
+    }
+
+    &--like {
+      button {
+        padding: 1rem 1.3rem;
+        font-size: 1.1rem;
+        color: $fullWhite;
+        background-color: $black;
+        border: {
+          color: $black;
+          radius: 0.7rem;
+        }
+        &:hover {
+          color: red;
         }
       }
+    }
   }
-
 }

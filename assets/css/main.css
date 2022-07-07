@@ -484,6 +484,7 @@ h2 {
   border: none;
   border-bottom: 1px solid #4E3FEE;
   background-color: black;
+  font-size: 1.4rem;
 }
 
 .swiper {
@@ -517,10 +518,10 @@ h2 {
 }
 
 .myswiper__picture {
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .myswiper__picture img {
@@ -560,16 +561,16 @@ h2 {
 
 .myswiper__profile--name {
   justify-self: flex-start;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 
 .myswiper__profile--name p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .myswiper__profile--label button {
-  padding: .2rem 1.1rem;
+  padding: 0.2rem 1.1rem;
   font-size: 1.1rem;
   color: #fff;
   background-color: #4E3FEE;
@@ -589,16 +590,32 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.7rem;
   width: 100%;
+  margin: 1rem 0;
+}
+
+.myswiper__bid .price {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+
+.myswiper__bid .price span {
+  font-size: 1.4rem;
+  color: #a7a7a7;
 }
 
 .myswiper__bid--like button {
-  padding: .2rem 1.1rem;
+  padding: 1rem 1.3rem;
   font-size: 1.1rem;
   color: #fff;
   background-color: #202020;
   border-color: #202020;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
+}
+
+.myswiper__bid--like button:hover {
+  color: red;
 }
 
 .popular {
