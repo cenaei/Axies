@@ -1124,6 +1124,7 @@ h2 {
 
 .footer__menu ul li:hover {
   cursor: pointer;
+  color: #4E3FEE;
 }
 
 .footer__us {
@@ -1131,10 +1132,37 @@ h2 {
       align-self: flex-start;
 }
 
-.footer__us input {
-  background-color: transparent;
+.footer__us .email {
   border: 1px solid #4E3FEE;
   border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__us .email i {
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+
+.footer__us .email i:hover {
+  cursor: pointer;
+}
+
+.footer__us .email input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
   font-size: 1.5rem;
   font-weight: 400;
   padding: 1rem 2rem;
@@ -1159,16 +1187,29 @@ h2 {
 }
 
 .footer__us--socialmedia a {
-  margin: 0 .3rem;
+  margin: 0 0.3rem;
+  padding: 0.5rem;
   background-color: #ADADB0;
   color: #fff;
-  padding: .5rem;
   border-radius: 1rem;
   width: 4rem;
-  text-align: center;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  -webkit-transition: background-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
 }
 
 .footer__us--socialmedia a i {
+  text-align: center;
   font-size: 2rem;
 }
 
