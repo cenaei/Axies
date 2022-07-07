@@ -44,7 +44,7 @@
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">Explore</a>
+            <a href="#">Explore</a><i class="fa-solid fa-angle-down"></i>
             <ul>
               <li><a href="#">Auctions</a></li>
               <li><a href="#">Collections</a></li>
@@ -53,21 +53,21 @@
             </ul>
           </li>
           <li>
-            <a href="#">Activity</a>
+            <a href="#">Activity</a><i class="fa-solid fa-angle-down"></i>
             <ul>
               <li><a href="#">Streams</a></li>
               <li><a href="#">Events</a></li>
             </ul>
           </li>
           <li>
-            <a href="#">Community</a>
+            <a href="#">Community</a><i class="fa-solid fa-angle-down"></i>
             <ul>
               <li><a href="#">Forum</a></li>
               <li><a href="#">Social Medias</a></li>
             </ul>
           </li>
           <li>
-            <a href="#">Pages</a>
+            <a href="#">Pages</a><i class="fa-solid fa-angle-down"></i>
             <ul>
               <li><a href="#">Blog</a></li>
               <li><a href="#">FAQ</a></li>
@@ -80,6 +80,13 @@
         </ul>
       </div>
       <div class="header__search">
+        <form name="search">
+          <input
+            type="text"
+            name="txt"
+            onmouseout="this.value = ''; this.blur();"
+          />
+        </form>
         <img src="./assets/img/icon/Search.svg" alt="Search" />
       </div>
       <div class="header__wallet">

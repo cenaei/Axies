@@ -1,0 +1,37 @@
+.header__search {
+  position: relative;
+  input {
+    padding: 10px;
+    width: 4rem;
+    height: 4rem;
+    background: none;
+    border: 4px solid $purple;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    color: $purple;
+    outline: none;
+    transition: 0.5s;
+    &:hover {
+      width: 30rem;
+      background: #3b3640;
+      border-radius: 1.3rem;
+    }
+  }
+  img {
+    border: 1px solid $purple;
+    padding: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%, -50%);
+    color: $purple;
+    transition: 0.2s;
+    &:hover {
+      cursor: pointer;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}

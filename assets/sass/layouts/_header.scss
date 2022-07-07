@@ -5,7 +5,11 @@
   &__menu {
     &--items {
       @include flexBetween(row);
-      gap: 2rem;
+      gap: 3rem;
+      i {
+        margin-left: .5rem;
+        display: inline;
+      }
     }
   }
 
@@ -21,6 +25,15 @@
           weight: 500;
         }
       }
+      
+      i {
+        position: absolute;
+        transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+
+      &:hover i {
+        transform: rotate(-180deg);
+      }
 
       ul {
         position: absolute !important;
@@ -33,6 +46,8 @@
 
         padding: 1rem;
         min-width: 15rem;
+        // border-radius: 1.3rem !important;
+        // Not Working
 
         li {
           clear: both;
@@ -53,10 +68,6 @@
     opacity: 1;
     display: block;
   }
-
-  // &__search {
-
-  // }
 
   &__wallet {
     img {
