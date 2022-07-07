@@ -11,6 +11,7 @@
       border-radius: 0;
       border: none;
       border-bottom: 1px solid $purple;
+      font-size: 1.4rem;
     }
   }
 
@@ -18,15 +19,19 @@
     @include flexBetween(row);
     margin: 1.5rem 0;
     width: 100%;
-    
+
     button {
-      padding: 1rem;
-      margin: 0 .7rem;
+      padding: 1.2rem;
+      margin: 0 0.7rem;
       font: {
-        size: 1.2rem;
+        size: 1.4rem;
         weight: 500;
       }
       border-color: $darkGray;
+      &:hover {
+        background-color: $white;
+        color: $background;
+      }
     }
   }
 
@@ -66,27 +71,65 @@
         width: 6rem;
         border-radius: 2rem;
       }
-      
     }
 
     &--bid {
       @include flexBetween(row);
       width: 100%;
+      font-size: 1.7rem;
+      margin: 1rem 0;
+      .price {
+        font-size: 1.6rem;
+        margin-top: 0.5rem;
+        span {
+          font-size: 1.4rem;
+          color: #a7a7a7;
+        }
+      }
+      .today__bid--history {
+        background-color: $background;
+        padding: 1rem;
+        border-radius: 1.3rem;
+        font-size: 1.4rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
+    transition: transform 500ms ease-in-out;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__profile {
+    &--name {
+      font-size: 1.6rem;
+      p {
+        color: #a7a7a7;
+        font-size: 1.3rem;
+      }
+    }
+    &--label {
+      font-size: 1.4rem;
+    }
   }
 
   &__more {
     margin: 3rem 0;
     button {
       padding: 1.1rem 4rem;
-      margin: 0 .7rem;
+      margin: 0 0.7rem;
       font: {
         size: 1.2rem;
         weight: 500;
       }
       border-color: $darkGray;
+      &:hover {
+        background-color: $white;
+        color: $background;
+      }
     }
   }
-
 }

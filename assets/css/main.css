@@ -904,6 +904,7 @@ h2 {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #4E3FEE;
+  font-size: 1.4rem;
 }
 
 .today__label {
@@ -925,11 +926,16 @@ h2 {
 }
 
 .today__label button {
-  padding: 1rem;
-  margin: 0 .7rem;
-  font-size: 1.2rem;
+  padding: 1.2rem;
+  margin: 0 0.7rem;
+  font-size: 1.4rem;
   font-weight: 500;
   border-color: #ADADB0;
+}
+
+.today__label button:hover {
+  background-color: #fcfcfc;
+  color: #14141F;
 }
 
 .today__content {
@@ -961,6 +967,10 @@ h2 {
   border-radius: 3rem;
   background-color: #343444;
   padding: 2rem;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 .today__post img {
@@ -1012,6 +1022,47 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+}
+
+.today__post--bid .price {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+
+.today__post--bid .price span {
+  font-size: 1.4rem;
+  color: #a7a7a7;
+}
+
+.today__post--bid .today__bid--history {
+  background-color: #14141F;
+  padding: 1rem;
+  border-radius: 1.3rem;
+  font-size: 1.4rem;
+}
+
+.today__post--bid .today__bid--history:hover {
+  cursor: pointer;
+}
+
+.today__post:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.today__profile--name {
+  font-size: 1.6rem;
+}
+
+.today__profile--name p {
+  color: #a7a7a7;
+  font-size: 1.3rem;
+}
+
+.today__profile--label {
+  font-size: 1.4rem;
 }
 
 .today__more {
@@ -1020,10 +1071,15 @@ h2 {
 
 .today__more button {
   padding: 1.1rem 4rem;
-  margin: 0 .7rem;
+  margin: 0 0.7rem;
   font-size: 1.2rem;
   font-weight: 500;
   border-color: #ADADB0;
+}
+
+.today__more button:hover {
+  background-color: #fcfcfc;
+  color: #14141F;
 }
 
 .footer {
