@@ -4,12 +4,13 @@
   &__title {
     @include flexBetween(row);
     width: 100%;
-    
+
     button {
       padding: 0 0 0.5rem;
       border-radius: 0;
       border: none;
       border-bottom: 1px solid $purple;
+      font-size: 1.4rem;
     }
   }
 
@@ -27,6 +28,10 @@
       padding: 1rem;
       border-radius: 2rem;
       background-color: $background-gray;
+      transition: transform 500ms ease-in-out;
+      &:hover {
+        transform: translateY(-1rem);
+      }
     }
 
     &--content {
@@ -40,22 +45,30 @@
 
     &--likes {
       @include flexEvenly(row);
+      gap: .5rem;
       background-color: $background;
       border-radius: 2rem;
-      padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+      padding: .8rem;
+      font-size: 1.4em;
+      &:hover { color: red; cursor: pointer;}
     }
   }
 
-  &__info--title {
-    font-size: 1.6rem;
-    font-weight: 500;
-  }
-  &__info--name {
-    font-size: 1.2rem;
-    font-weight: 500;
-    span {
-      font-weight: 400;
-      font-size: 1rem;
+  &__info {
+    justify-self: flex-start;
+    &--title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: .7rem;
+    }
+    &--name {
+      font-size: 1.6rem;
+      font-weight: 500;
+      span {
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: #a7a7a7;
+      }
     }
   }
 }

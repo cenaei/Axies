@@ -657,6 +657,7 @@ h2 {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #4E3FEE;
+  font-size: 1.4rem;
 }
 
 .popular__cards {
@@ -685,6 +686,15 @@ h2 {
   padding: 1rem;
   border-radius: 2rem;
   background-color: #343444;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+.popular__cards--first:hover, .popular__cards--second:hover, .popular__cards--third:hover {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
 }
 
 .popular__cards--content {
@@ -733,24 +743,37 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: .5rem;
   background-color: #14141F;
   border-radius: 2rem;
-  padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  padding: .8rem;
+  font-size: 1.4em;
+}
+
+.popular__cards--likes:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.popular__info {
+  justify-self: flex-start;
 }
 
 .popular__info--title {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
+  margin-bottom: .7rem;
 }
 
 .popular__info--name {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 
 .popular__info--name span {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  color: #a7a7a7;
 }
 
 .seller {
