@@ -54,7 +54,6 @@
   grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
   grid-template-rows: 1fr;
   overflow: auto;
-  resize: horizontal;
   grid-column-gap: 10rem;
   grid-row-gap: 0px;
 }
