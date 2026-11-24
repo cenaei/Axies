@@ -1,4 +1,4 @@
-@mixin flex($flex) {
+@mixin flex($flex: row) {
   display: flex;
   flex-direction: $flex;
 }
@@ -8,28 +8,28 @@
   align-items: center;
 }
 
-@mixin flexCenter($flex) {
+@mixin flexCenter($flex: row) {
   display: flex;
   flex-direction: $flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin flexAround($flex) {
+@mixin flexAround($flex: row) {
   display: flex;
   flex-direction: $flex;
   justify-content: space-around;
   align-items: center;
 }
 
-@mixin flexBetween($flex) {
+@mixin flexBetween($flex: row) {
   display: flex;
   flex-direction: $flex;
   justify-content: space-between;
   align-items: center;
 }
 
-@mixin flexEvenly($flex) {
+@mixin flexEvenly($flex: row) {
   display: flex;
   flex-direction: $flex;
   justify-content: space-evenly;
@@ -43,17 +43,40 @@
   align-items: $a;
 }
 
-@mixin center {
+@mixin absoluteCenter {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@mixin grid($min: 35rem) {
+@mixin grid($min: 28rem) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
-  grid-template-rows: 1fr;
-  overflow: auto;
-  grid-column-gap: 10rem;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: 2.4rem;
+}
+
+/* Responsive Breakpoints */
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
 }

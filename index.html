@@ -1,1039 +1,976 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <meta name="description" content="Axies is the premier Web3 NFT marketplace for discovering, collecting, and trading extraordinary monster digital art and character collections." />
+    <meta name="theme-color" content="#0b0b14" />
+    
+    <!-- Preconnect & Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Orbitron:wght@500;600;700;800;900&display=swap"
     />
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/38a4aeacdd.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Axies NFT Market Place</title>
+
+    <!-- Main Compiled Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <title>Axies — Discover, Collect & Trade Monster NFTs | Web3 Marketplace</title>
   </head>
 
   <body>
-    <div class="splash-screen">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: #e8e8e8; display: block;" width="170px" height="170px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-        <g transform="translate(50,50)"><circle cx="0" cy="0" r="8.333333333333334" fill="none" stroke="#14141f" stroke-width="6" stroke-dasharray="26.179938779914945 26.179938779914945">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.1494252873563218s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="0" repeatCount="indefinite"></animateTransform>
-        </circle><circle cx="0" cy="0" r="16.666666666666668" fill="none" stroke="#adadb0" stroke-width="6" stroke-dasharray="52.35987755982989 52.35987755982989">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.1494252873563218s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.167816091954023" repeatCount="indefinite"></animateTransform>
-        </circle><circle cx="0" cy="0" r="25" fill="none" stroke="#14141f" stroke-width="6" stroke-dasharray="78.53981633974483 78.53981633974483">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.1494252873563218s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.335632183908046" repeatCount="indefinite"></animateTransform>
-        </circle><circle cx="0" cy="0" r="33.333333333333336" fill="none" stroke="#9550e5" stroke-width="6" stroke-dasharray="104.71975511965978 104.71975511965978">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.1494252873563218s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.503448275862069" repeatCount="indefinite"></animateTransform>
-        </circle><circle cx="0" cy="0" r="41.666666666666664" fill="none" stroke="#4e3fee" stroke-width="6" stroke-dasharray="130.89969389957471 130.89969389957471">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.1494252873563218s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.671264367816092" repeatCount="indefinite"></animateTransform>
-        </circle></g>
-        </svg>
+    <!-- Accessibility: Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Screen Reader Live Announcements -->
+    <div id="a11y-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Splash Screen Loader -->
+    <div class="splash-screen" role="progressbar" aria-label="Loading Axies Marketplace">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        style="margin: auto; display: block;"
+        width="140px"
+        height="140px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        aria-hidden="true"
+      >
+        <g transform="translate(50,50)">
+          <circle cx="0" cy="0" r="10" fill="none" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="31.4 31.4">
+            <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.2s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="0" repeatCount="indefinite" />
+          </circle>
+          <circle cx="0" cy="0" r="22" fill="none" stroke="#a78bfa" stroke-width="5" stroke-dasharray="69.1 69.1">
+            <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.2s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="0" cy="0" r="34" fill="none" stroke="#5142fb" stroke-width="5" stroke-dasharray="106.8 106.8">
+            <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" times="0;1" dur="1.2s" calcMode="spline" keySplines="0.2 0 0.8 1" begin="-0.4s" repeatCount="indefinite" />
+          </circle>
+        </g>
+      </svg>
     </div>
-    <header class="header">
-      <div class="header__logo">
-        <img src="./assets/img/Logo.svg" alt="Axies Logo" />
+
+    <!-- Header & Navigation -->
+    <header class="header" role="banner">
+      <div class="header__left">
+        <a href="#top" class="header__logo" aria-label="Axies Home">
+          <img src="./assets/img/Logo.svg" alt="Axies NFT Marketplace Logo" class="logo-dark" width="135" height="36" />
+          <img src="./assets/img/Logo-light.svg" alt="Axies NFT Marketplace Logo" class="logo-light" width="135" height="36" />
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="header__menu" aria-label="Main Navigation">
+          <ul class="header__menu--items">
+            <li>
+              <a href="#top">Home</a>
+            </li>
+            <li>
+              <a href="#explore">
+                Explore
+                <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </a>
+              <ul>
+                <li><a href="#live-auctions">Live Auctions</a></li>
+                <li><a href="#popular-collections">Collections</a></li>
+                <li><a href="#todays-picks">Today's Picks</a></li>
+                <li><a href="#top-sellers">Top Sellers</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#features">
+                Features
+                <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </a>
+              <ul>
+                <li><a href="#features">Wallet Setup</a></li>
+                <li><a href="#features">Minting NFTs</a></li>
+                <li><a href="#features">Selling Guide</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#community">
+                Community
+                <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </a>
+              <ul>
+                <li><a href="#footer-newsletter">Newsletter</a></li>
+                <li><a href="#social-links">Social Channels</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="header__menu">
-        <ul class="header__menu--items">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Explore</a><i class="fa-solid fa-angle-down"></i>
-            <ul>
-              <li><a href="#">Auctions</a></li>
-              <li><a href="#">Collections</a></li>
-              <li><a href="#">Today's Picks</a></li>
-              <li><a href="#">Sellers</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Activity</a><i class="fa-solid fa-angle-down"></i>
-            <ul>
-              <li><a href="#">Streams</a></li>
-              <li><a href="#">Events</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Community</a><i class="fa-solid fa-angle-down"></i>
-            <ul>
-              <li><a href="#">Forum</a></li>
-              <li><a href="#">Social Medias</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Pages</a><i class="fa-solid fa-angle-down"></i>
-            <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Create Item</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div class="header__search">
-        <img src="./assets/img/icon/Search.svg" alt="Search" />
-        <input type="search" name="search" id="search" />
-      </div>
-      <div class="header__wallet">
-        <button>
-          <img src="./assets/img/icon/wallet.svg" alt="wallet" />
-          Wallet Connect
+
+      <!-- Header Actions: Search, Wallet & Theme -->
+      <div class="header__actions">
+        <!-- Search Bar -->
+        <div class="header__search">
+          <form class="search-form" role="search" onsubmit="event.preventDefault();">
+            <div class="search-input-wrapper">
+              <label for="search" class="sr-only">Search NFTs and creators</label>
+              <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" name="search" id="search" placeholder="Search art, creators..." autocomplete="off" />
+            </div>
+          </form>
+        </div>
+
+        <!-- Wallet Connect Button -->
+        <div class="header__wallet">
+          <button type="button" id="wallet-connect-btn" aria-haspopup="dialog" aria-controls="wallet-modal">
+            <img src="./assets/img/icon/wallet.svg" alt="" aria-hidden="true" width="18" height="18" />
+            <span class="wallet-btn-text"><span class="wallet-btn-text-full">Wallet </span>Connect</span>
+          </button>
+        </div>
+
+        <!-- Cool Theme Switch Component (Framer Port) -->
+        <label class="theme-switch" for="theme-switch-checkbox" aria-label="Toggle theme mode (Dark / Light)">
+          <input type="checkbox" id="theme-switch-checkbox" class="theme-switch__checkbox" role="switch" aria-checked="true" />
+          <div class="theme-switch__container">
+            <div class="theme-switch__circle-container">
+              <div class="theme-switch__sun-moon-container">
+                <div class="theme-switch__moon">
+                  <span class="theme-switch__spot"></span>
+                  <span class="theme-switch__spot"></span>
+                  <span class="theme-switch__spot"></span>
+                </div>
+              </div>
+            </div>
+            <span class="theme-switch__clouds"></span>
+            <span class="theme-switch__stars-container">
+              <svg width="44" height="9" viewBox="0 0 44 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="2.5" cy="6.5" r="1.5" fill="#fff" />
+                <circle cx="8.5" cy="1.5" r="0.5" fill="#fff" />
+                <circle cx="16" cy="3" r="1" fill="#fff" />
+                <circle cx="22.5" cy="7.5" r="1.5" fill="#fff" />
+                <circle cx="29.5" cy="3.5" r="1" fill="#fff" />
+                <circle cx="36" cy="1" r="0.5" fill="#fff" />
+                <circle cx="41.5" cy="6.5" r="1" fill="#fff" />
+              </svg>
+            </span>
+          </div>
+        </label>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          type="button"
+          class="header__hamburger"
+          id="mobile-hamburger-btn"
+          aria-label="Open mobile navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
-      </div>
-      <div class="header__theme">
-        <div class="header__theme--items">
-          <img src="./assets/img/icon/sun.svg" alt="sun logo" />
-        </div>
-        <div class="header__theme--items">
-          <img src="./assets/img/icon/moon.svg" alt="moon logo" />
-        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation" aria-modal="true" role="dialog">
+      <div class="mobile-nav__header">
+        <img src="./assets/img/Logo.svg" alt="Axies Logo" class="logo-dark" width="120" height="32" />
+        <img src="./assets/img/Logo-light.svg" alt="Axies Logo" class="logo-light" width="120" height="32" />
+        <button type="button" class="mobile-nav-close" id="mobile-nav-close-btn" aria-label="Close mobile navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav__list">
+        <li><a href="#top">Home</a></li>
+        <li>
+          <a href="#live-auctions">Live Auctions</a>
+        </li>
+        <li>
+          <a href="#popular-collections">Popular Collections</a>
+        </li>
+        <li>
+          <a href="#top-sellers">Top Sellers</a>
+        </li>
+        <li>
+          <a href="#todays-picks">Today's Picks</a>
+        </li>
+        <li>
+          <a href="#features">Getting Started</a>
+        </li>
+        <li>
+          <a href="#footer-newsletter">Community & Newsletter</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__wrapper">
           <div class="hero__top">
             <div class="hero__left">
-              <h1>
+              <h1 id="hero-heading">
                 Discover, and collect <br />
-                <span class="extraordinary">
-                  <span style="--i:1">e</span>
-                  <span style="--i:2">x</span>
-                  <span style="--i:3">t</span>
-                  <span style="--i:4">r</span>
-                  <span style="--i:5">a</span>
-                  <span style="--i:6">o</span>
-                  <span style="--i:7">r</span>
-                  <span style="--i:8">d</span>
-                  <span style="--i:9">i</span>
-                  <span style="--i:10">n</span>
-                  <span style="--i:11">a</span>
-                  <span style="--i:12">r</span>
-                  <span style="--i:13">y</span>
-                </span> <br />
+                <span class="extraordinary" aria-label="extraordinary"><span style="--i:1">e</span><span style="--i:2">x</span><span style="--i:3">t</span><span style="--i:4">r</span><span style="--i:5">a</span><span style="--i:6">o</span><span style="--i:7">r</span><span style="--i:8">d</span><span style="--i:9">i</span><span style="--i:10">n</span><span style="--i:11">a</span><span style="--i:12">r</span><span style="--i:13">y</span></span> <br />
                 <span class="monster">Monster</span> NFTs
               </h1>
               <p>
-                Marketplace for Moster Character Collectons Non Fungible Token
-                NFTs
+                The premier decentralized marketplace for Monster Character Collections and next-gen Non-Fungible Tokens.
               </p>
               <div class="hero__left--btn">
-                <button>
-                  <img src="./assets/img/icon/explore.svg" alt="explore logo" />
-                  Explore
-                </button>
-                <button>
-                  <img src="./assets/img/icon/create.svg" alt="create logo" />
-                  Create
-                </button>
+                <a href="#live-auctions">
+                  <button type="button" class="btn-primary">
+                    <img src="./assets/img/icon/explore.svg" alt="" aria-hidden="true" width="18" height="18" />
+                    Explore Marketplace
+                  </button>
+                </a>
+                <a href="#todays-picks">
+                  <button type="button" class="btn-secondary">
+                    <img src="./assets/img/icon/create.svg" alt="" aria-hidden="true" width="18" height="18" />
+                    View Picks
+                  </button>
+                </a>
               </div>
             </div>
             <div class="hero__right">
-              <img src="./assets/img/hero.svg" alt="astronaut" />
+              <img src="./assets/img/hero.svg" alt="Futuristic 3D astronaut exploring cybernetic digital space" width="540" height="480" />
             </div>
           </div>
-          <div class="features">
-            <div class="features__div--blue">
-              <div>
-                <img
-                  src="./assets/img/icon/features-1.svg"
-                  alt="features logo"
-                />
+
+          <!-- Features (Bento Cards) -->
+          <div class="features" id="features" aria-label="Platform Features">
+            <div class="features__card blue">
+              <div class="features__card--icon">
+                <img src="./assets/img/icon/features-1.svg" alt="" aria-hidden="true" width="32" height="32" />
               </div>
               <h3>Set Up Your Wallet</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-                posuere in vestibulum volutpat. Ut pharetra morbi sit.
+                Connect with MetaMask, Coinbase, or WalletConnect in seconds. One-click setup with institutional-grade security.
               </p>
             </div>
-            <div class="features__div--green">
-              <div>
-                <img
-                  src="./assets/img/icon/features-2.svg"
-                  alt="features logo"
-                />
+
+            <div class="features__card green">
+              <div class="features__card--icon">
+                <img src="./assets/img/icon/features-2.svg" alt="" aria-hidden="true" width="32" height="32" />
               </div>
-              <h3>Set Up Your Wallet</h3>
+              <h3>Create Your Collection</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-                posuere in vestibulum volutpat. Ut pharetra morbi sit.
+                Upload your digital masterpieces, configure custom royalties, and deploy audited ERC-721 smart contracts seamlessly.
               </p>
             </div>
-            <div class="features__div--purple">
-              <div>
-                <img
-                  src="./assets/img/icon/features-3.svg"
-                  alt="features logo"
-                />
+
+            <div class="features__card purple">
+              <div class="features__card--icon">
+                <img src="./assets/img/icon/features-3.svg" alt="" aria-hidden="true" width="32" height="32" />
               </div>
               <h3>Add Your NFTs</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-                posuere in vestibulum volutpat. Ut pharetra morbi sit.
+                Attach rich multimedia artwork, generate traits and rarity scores, and preview your listings before public reveal.
               </p>
             </div>
-            <div class="features__div--red">
-              <div>
-                <img
-                  src="./assets/img/icon/features-4.svg"
-                  alt="features logo"
-                />
+
+            <div class="features__card red">
+              <div class="features__card--icon">
+                <img src="./assets/img/icon/features-4.svg" alt="" aria-hidden="true" width="32" height="32" />
               </div>
-              <h3>Lsist Them For Sale</h3>
+              <h3>List Them For Sale</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-                posuere in vestibulum volutpat. Ut pharetra morbi sit.
+                Choose between competitive live auctions, fixed pricing, or declining Dutch auctions with zero platform listing fees.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="live">
+      <!-- Live Auctions Section -->
+      <section class="live" id="live-auctions" aria-labelledby="live-heading">
         <div class="live__title">
-          <h2>Live Auctions</h2>
-          <button>EXPLORE MORE</button>
+          <h2 id="live-heading">Live Auctions</h2>
+          <div class="live__nav-controls">
+            <button type="button" class="carousel-nav-btn" id="carousel-prev-btn" aria-label="Previous auction slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-nav-btn" id="carousel-next-btn" aria-label="Next auction slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
         </div>
+
         <div class="live__content">
-          <!-- Slider main container -->
-          <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide myswiper">
+          <div class="carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Live Auction items">
+            <div class="carousel-track" tabindex="0" aria-label="Scrollable list of auctions. Use left and right arrow keys to browse.">
+              
+              <!-- Slide 1 -->
+              <article class="myswiper" data-countdown-hours="8">
                 <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 62.png" alt="" />
+                  <img src="./assets/img/post/Rectangle 62.png" alt="Hamlet Contemplates Yorick artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">08h : 24m : 16s</span>
+                  </div>
                 </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
+                <div class="myswiper__title">Hamlet Contemplates Yorick</div>
                 <div class="myswiper__profile">
                   <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
+                    <img src="./assets/img/profile/Andy Hurlbutt.jpg" alt="Andy Hurlbutt" loading="lazy" />
                   </figure>
                   <div class="myswiper__profile--name">
                     <p>Creator</p>
                     <div class="name">Andy Hurlbutt</div>
                   </div>
                   <div class="myswiper__profile--label">
-                    <button>BSC</button>
+                    <button type="button" tabindex="-1">BSC</button>
                   </div>
                 </div>
                 <div class="myswiper__bid">
                   <div class="myswiper__bid--price">
                     <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
+                    <p class="price">4.89 ETH <span>= $12,246</span></p>
                   </div>
                   <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
+                    <button type="button" class="like-btn" data-id="nft-1" aria-label="Like this artwork, currently 104 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">104</span>
+                    </button>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 63.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 64.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 65.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 66.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 67.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide myswiper">
-                <figure class="myswiper__picture">
-                  <img src="./assets/img/post/Rectangle 68.png" alt="" />
-                </figure>
-                <div class="myswiper__title">
-                  “Hamlet Contemplates Yorick’s...
-                </div>
-                <div class="myswiper__profile">
-                  <figure class="myswiper__profile--avatar">
-                    <img
-                      src="./assets/img/profile/Andy Hurlbutt.jpg"
-                      alt="Avatar Photo"
-                    />
-                  </figure>
-                  <div class="myswiper__profile--name">
-                    <p>Creator</p>
-                    <div class="name">Andy Hurlbutt</div>
-                  </div>
-                  <div class="myswiper__profile--label">
-                    <button>BSC</button>
-                  </div>
-                </div>
-                <div class="myswiper__bid">
-                  <div class="myswiper__bid--price">
-                    <p class="current">Current Bid</p>
-                    <p class="price">4.89 ETH <span>= $12.246</span></p>
-                  </div>
-                  <div class="myswiper__bid--like">
-                    <button><i class="fa-solid fa-heart"></i> 100</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+              </article>
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+              <!-- Slide 2 -->
+              <article class="myswiper" data-countdown-hours="14">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 63.png" alt="Cybernetic Astronaut Odyssey artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">14h : 10m : 05s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Cybernetic Astronaut Odyssey</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Dan Salahi.jpg" alt="Dan Salahi" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Dan Salahi</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">ETH</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">3.45 ETH <span>= $8,625</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-2" aria-label="Like this artwork, currently 182 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">182</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 3 -->
+              <article class="myswiper" data-countdown-hours="5">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 64.png" alt="Synthesizer Echoes artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">05h : 48m : 30s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Synthesizer Echoes #08</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Harper Wilcher.jpg" alt="Harper Wilcher" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Harper Wilcher</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">BSC</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">2.15 ETH <span>= $5,375</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-3" aria-label="Like this artwork, currently 95 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">95</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 4 -->
+              <article class="myswiper" data-countdown-hours="19">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 65.png" alt="Decentralized Dominion domain art" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">19h : 35m : 12s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Decentralized Dominion.eth</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Blake Banks.jpg" alt="Blake Banks" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Blake Banks</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">ETH</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">6.20 ETH <span>= $15,500</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-4" aria-label="Like this artwork, currently 210 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">210</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 5 -->
+              <article class="myswiper" data-countdown-hours="11">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 66.png" alt="Ethereal Monster Genesis artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">11h : 02m : 45s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Ethereal Monster Genesis</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Sina Sangiji.jpg" alt="Sina Sangiji" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Sina Sangiji</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">BSC</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">5.75 ETH <span>= $14,375</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-5" aria-label="Like this artwork, currently 340 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">340</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 6 -->
+              <article class="myswiper" data-countdown-hours="6">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 67.png" alt="Cyberpunk Metropolis artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">06h : 18m : 55s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Cyberpunk Metropolis #104</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Matt Ramos.jpg" alt="Matt Ramos" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Matt Ramos</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">ETH</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">1.85 ETH <span>= $4,625</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-6" aria-label="Like this artwork, currently 88 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">88</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 7 -->
+              <article class="myswiper" data-countdown-hours="9">
+                <figure class="myswiper__picture">
+                  <img src="./assets/img/post/Rectangle 68.png" alt="Neon Skull Dimension artwork" loading="lazy" />
+                  <div class="countdown-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="timer-text">09h : 42m : 18s</span>
+                  </div>
+                </figure>
+                <div class="myswiper__title">Neon Skull Dimension #7</div>
+                <div class="myswiper__profile">
+                  <figure class="myswiper__profile--avatar">
+                    <img src="./assets/img/profile/Monica Lucas.jpg" alt="Monica Lucas" loading="lazy" />
+                  </figure>
+                  <div class="myswiper__profile--name">
+                    <p>Creator</p>
+                    <div class="name">Monica Lucas</div>
+                  </div>
+                  <div class="myswiper__profile--label">
+                    <button type="button" tabindex="-1">BSC</button>
+                  </div>
+                </div>
+                <div class="myswiper__bid">
+                  <div class="myswiper__bid--price">
+                    <p class="current">Current Bid</p>
+                    <p class="price">3.90 ETH <span>= $9,750</span></p>
+                  </div>
+                  <div class="myswiper__bid--like">
+                    <button type="button" class="like-btn" data-id="nft-7" aria-label="Like this artwork, currently 156 likes">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                      <span class="like-count">156</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="popular">
+      <!-- Popular Collections Section -->
+      <section class="popular" id="popular-collections" aria-labelledby="popular-heading">
         <div class="popular__title">
-          <h2>Popular Collection</h2>
-          <button>EXPLORE MORE</button>
+          <h2 id="popular-heading">Popular Collections</h2>
+          <a href="#todays-picks" class="explore-more-link">EXPLORE MORE &rarr;</a>
         </div>
-        <div class="popular__cards">
-          <div class="popular__cards--first">
-            <div class="popular__cards--two">
-              <img src="./assets/img/nfts/1.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/2.png" alt="NFT Photo" />
+
+        <div class="popular__grid">
+          <!-- Collection 1 -->
+          <article class="popular__card">
+            <div class="popular__card--mosaic">
+              <img class="mosaic-main" src="./assets/img/nfts/1.png" alt="Creative Art primary showcase" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/2.png" alt="Creative Art preview item 1" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/12.png" alt="Creative Art preview item 2" loading="lazy" />
             </div>
-            <div class="popular__cards--three">
-              <img src="./assets/img/nfts/12.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/14.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/15.png" alt="NFT Photo" />
-            </div>
-            <div class="popular__cards--content">
-              <div class="popular__cards--avatar">
-                <img src="./assets/img/avatar/13.png" alt="avatar" />
-              </div>
-              <div class="popular__cards--info">
-                <div class="popular__info--title">Creative Art Collection</div>
-                <div class="popular__info--name">
-                  <span>Created by</span> Relph Garraway
+            <div class="popular__card--info">
+              <div class="collection-meta">
+                <h3>Creative Art Collection</h3>
+                <div class="creator-info">
+                  <img src="./assets/img/avatar/13.png" alt="Ralph Garraway" loading="lazy" />
+                  <span>Created by <span class="creator-name">Ralph Garraway</span></span>
                 </div>
               </div>
-              <div class="popular__cards--likes">
-                <i class="fa-solid fa-heart"></i>
-                <span>200</span>
+              <div class="collection-likes" aria-label="124 likes">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>124</span>
               </div>
             </div>
-          </div>
-          <div class="popular__cards--second">
-            <div class="popular__cards--two">
-              <img src="./assets/img/nfts/1.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/2.png" alt="NFT Photo" />
+          </article>
+
+          <!-- Collection 2 -->
+          <article class="popular__card">
+            <div class="popular__card--mosaic">
+              <img class="mosaic-main" src="./assets/img/nfts/14.png" alt="Colorful Abstract primary showcase" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/15.png" alt="Colorful Abstract preview item 1" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/1.png" alt="Colorful Abstract preview item 2" loading="lazy" />
             </div>
-            <div class="popular__cards--three">
-              <img src="./assets/img/nfts/12.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/14.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/15.png" alt="NFT Photo" />
-            </div>
-            <div class="popular__cards--content">
-              <div class="popular__cards--avatar">
-                <img src="./assets/img/avatar/13.png" alt="avatar" />
-              </div>
-              <div class="popular__cards--info">
-                <div class="popular__info--title">Creative Art Collection</div>
-                <div class="popular__info--name">
-                  <span>Created by</span> Relph Garraway
+            <div class="popular__card--info">
+              <div class="collection-meta">
+                <h3>Colorful Abstract Worlds</h3>
+                <div class="creator-info">
+                  <img src="./assets/img/profile/Blake Banks.jpg" alt="Mason Woodward" loading="lazy" />
+                  <span>Created by <span class="creator-name">Mason Woodward</span></span>
                 </div>
               </div>
-              <div class="popular__cards--likes">
-                <i class="fa-solid fa-heart"></i>
-                <span>200</span>
+              <div class="collection-likes" aria-label="98 likes">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>98</span>
               </div>
             </div>
-          </div>
-          <div class="popular__cards--third">
-            <div class="popular__cards--two">
-              <img src="./assets/img/nfts/1.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/2.png" alt="NFT Photo" />
+          </article>
+
+          <!-- Collection 3 -->
+          <article class="popular__card">
+            <div class="popular__card--mosaic">
+              <img class="mosaic-main" src="./assets/img/nfts/2.png" alt="Modern Fantasy primary showcase" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/12.png" alt="Modern Fantasy preview item 1" loading="lazy" />
+              <img class="mosaic-sub" src="./assets/img/nfts/14.png" alt="Modern Fantasy preview item 2" loading="lazy" />
             </div>
-            <div class="popular__cards--three">
-              <img src="./assets/img/nfts/12.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/14.png" alt="NFT Photo" />
-              <img src="./assets/img/nfts/15.png" alt="NFT Photo" />
-            </div>
-            <div class="popular__cards--content">
-              <div class="popular__cards--avatar">
-                <img src="./assets/img/avatar/13.png" alt="avatar" />
-              </div>
-              <div class="popular__cards--info">
-                <div class="popular__info--title">Creative Art Collection</div>
-                <div class="popular__info--name">
-                  <span>Created by</span> Relph Garraway
+            <div class="popular__card--info">
+              <div class="collection-meta">
+                <h3>Modern Fantasy Creatures</h3>
+                <div class="creator-info">
+                  <img src="./assets/img/profile/Crispin Berry.jpg" alt="Freddie Carpenter" loading="lazy" />
+                  <span>Created by <span class="creator-name">Freddie Carpenter</span></span>
                 </div>
               </div>
-              <div class="popular__cards--likes">
-                <i class="fa-solid fa-heart"></i>
-                <span>200</span>
+              <div class="collection-likes" aria-label="145 likes">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>145</span>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section class="seller">
+      <!-- Top Sellers Section -->
+      <section class="seller" id="top-sellers" aria-labelledby="sellers-heading">
         <div class="seller__title">
-          <h2>Top Seller</h2>
+          <h2 id="sellers-heading">Top Sellers</h2>
         </div>
-        <div class="seller__content">
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Crispin Berry.jpg"
-                alt="Profile Avatar"
-              />
+
+        <div class="seller__grid">
+          <!-- Seller 1 -->
+          <article class="seller__card">
+            <span class="seller-rank">1</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Andy Hurlbutt.jpg" alt="Andy Hurlbutt" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Crispin Berry</li>
-              <li class="seller__profile--price">120.7 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Matt Ramos.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Andy Hurlbutt</h4>
+              <p class="volume">214.2 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 2 -->
+          <article class="seller__card">
+            <span class="seller-rank">2</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Blake Banks.jpg" alt="Blake Banks" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Matt Ramos</li>
-              <li class="seller__profile--price">68.2 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Blake Banks.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Blake Banks</h4>
+              <p class="volume">189.5 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 3 -->
+          <article class="seller__card">
+            <span class="seller-rank">3</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Crispin Berry.jpg" alt="Crispin Berry" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Blake Banks</li>
-              <li class="seller__profile--price">38.4 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Windsor Lane.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Crispin Berry</h4>
+              <p class="volume">165.8 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 4 -->
+          <article class="seller__card">
+            <span class="seller-rank">4</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Dan Salahi.jpg" alt="Dan Salahi" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Windsor Lane</li>
-              <li class="seller__profile--price">214.2 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Harper Wilcher.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Dan Salahi</h4>
+              <p class="volume">152.0 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 5 -->
+          <article class="seller__card">
+            <span class="seller-rank">5</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Harper Wilcher.jpg" alt="Harper Wilcher" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Harper Wilcher</li>
-              <li class="seller__profile--price">170.3 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Monica Lucas.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Harper Wilcher</h4>
+              <p class="volume">144.3 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 6 -->
+          <article class="seller__card">
+            <span class="seller-rank">6</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Matt Ramos.jpg" alt="Matt Ramos" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Monica Lucas</li>
-              <li class="seller__profile--price">82.79 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Andy Hurlbutt.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Matt Ramos</h4>
+              <p class="volume">138.9 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 7 -->
+          <article class="seller__card">
+            <span class="seller-rank">7</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Monica Lucas.jpg" alt="Monica Lucas" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Andy Hurlbutt</li>
-              <li class="seller__profile--price">52.8 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Tommy Alvarez.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Monica Lucas</h4>
+              <p class="volume">125.4 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 8 -->
+          <article class="seller__card">
+            <span class="seller-rank">8</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Sina Sangiji.jpg" alt="Sina Sangiji" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Tommy Alvarez</li>
-              <li class="seller__profile--price">29.2 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Sina Sangiji.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Sina Sangiji</h4>
+              <p class="volume">119.8 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 9 -->
+          <article class="seller__card">
+            <span class="seller-rank">9</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Tommy Alvarez.jpg" alt="Tommy Alvarez" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Sina Sangiji</li>
-              <li class="seller__profile--price">214.2 ETH</li>
-            </ul>
-          </div>
-          <div class="seller__profile">
-            <figure class="seller__profile--avatar">
-              <img
-                src="./assets/img/profile/Dan Salahi.jpg"
-                alt="Profile Avatar"
-              />
+            <div class="seller__card--info">
+              <h4>Tommy Alvarez</h4>
+              <p class="volume">108.2 ETH</p>
+            </div>
+          </article>
+
+          <!-- Seller 10 -->
+          <article class="seller__card">
+            <span class="seller-rank">10</span>
+            <figure class="seller__card--avatar">
+              <img src="./assets/img/profile/Windsor Lane.jpg" alt="Windsor Lane" loading="lazy" />
+              <img src="./assets/img/icon/valid.svg" class="verified-icon" alt="Verified creator" />
             </figure>
-            <ul class="seller__profile--content">
-              <li class="seller__profile--name">Dan Salahi</li>
-              <li class="seller__profile--price">214.2 ETH</li>
-            </ul>
-          </div>
+            <div class="seller__card--info">
+              <h4>Windsor Lane</h4>
+              <p class="volume">97.5 ETH</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="today">
+      <!-- Today's Picks Section (Live Filtered Catalog) -->
+      <section class="today" id="todays-picks" aria-labelledby="todays-picks-heading">
         <div class="today__title">
-          <h2>Today's Picks</h2>
-          <button>EXPLORE MORE</button>
+          <h2 id="todays-picks-heading">Today's Picks</h2>
+          <a href="#top" class="explore-all-btn">EXPLORE ALL &rarr;</a>
         </div>
-        <div class="today__label">
-          <div class="today__label--left">
-            <button>Category</button>
-            <button>Price range</button>
-            <button>Sale type</button>
-            <button>Blockchain</button>
-          </div>
-          <div class="today__label--right">
-            <button>Sort by: Recently Added</button>
-          </div>
+
+        <!-- Accessible Category Filter Tabs -->
+        <div class="today__filter-bar" role="tablist" aria-label="Filter NFT items by category">
+          <button type="button" class="filter-tab active" role="tab" id="tab-all" aria-selected="true" aria-controls="todays-picks-grid" data-category="all">
+            All Categories <span class="tab-count">8</span>
+          </button>
+          <button type="button" class="filter-tab" role="tab" id="tab-art" aria-selected="false" aria-controls="todays-picks-grid" data-category="art">
+            Art <span class="tab-count">2</span>
+          </button>
+          <button type="button" class="filter-tab" role="tab" id="tab-music" aria-selected="false" aria-controls="todays-picks-grid" data-category="music">
+            Music <span class="tab-count">2</span>
+          </button>
+          <button type="button" class="filter-tab" role="tab" id="tab-domain" aria-selected="false" aria-controls="todays-picks-grid" data-category="domain">
+            Domain Names <span class="tab-count">1</span>
+          </button>
+          <button type="button" class="filter-tab" role="tab" id="tab-virtual" aria-selected="false" aria-controls="todays-picks-grid" data-category="virtual">
+            Virtual World <span class="tab-count">2</span>
+          </button>
+          <button type="button" class="filter-tab" role="tab" id="tab-collectibles" aria-selected="false" aria-controls="todays-picks-grid" data-category="collectibles">
+            Collectibles <span class="tab-count">1</span>
+          </button>
         </div>
-        <div class="today__content">
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 61.png" alt="" />
-            </figure>
-            <div class="today__post--name">
-              “Hamlet Contemplates Yorick’s...
-            </div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 62.png" alt="" />
-            </figure>
-            <div class="today__post--name">“Crypto Egg Stamp #5”</div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 63.png" alt="" />
-            </figure>
-            <div class="today__post--name">“CyberPrimal 042 Lan”</div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 64.png" alt="" />
-            </figure>
-            <div class="today__post--name">“Crypto Egg Stamp #5”</div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 65.png" alt="" />
-            </figure>
-            <div class="today__post--name">
-              “Hamlet Contemplates Yorick’s...
-            </div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 66.png" alt="" />
-            </figure>
-            <div class="today__post--name">
-              “Hamlet Contemplates Yorick’s...
-            </div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 67.png" alt="" />
-            </figure>
-            <div class="today__post--name">
-              “Hamlet Contemplates Yorick’s...
-            </div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
-          <div class="today__post">
-            <figure class="today__post--photo">
-              <img src="./assets/img/post/Rectangle 68.png" alt="" />
-            </figure>
-            <div class="today__post--name">
-              “Hamlet Contemplates Yorick’s...
-            </div>
-            <div class="today__post--profile">
-              <figure class="today__profile--avatar">
-                <img
-                  src="./assets/img/profile/Andy Hurlbutt.jpg"
-                  alt="Avatar Photo"
-                />
-              </figure>
-              <div class="today__profile--name">
-                <p>Creator</p>
-                <div class="name">Andy Hurlbutt</div>
-              </div>
-              <div class="today__profile--label">
-                <button>BSC</button>
-              </div>
-            </div>
-            <div class="today__post--bid">
-              <div class="today__bid--price">
-                <p class="current">Current Bid</p>
-                <p class="price">4.89 ETH <span>= $12.246</span></p>
-              </div>
-              <div class="today__bid--history">
-                <i class="fa-solid fa-arrows-spin"></i>
-                View History
-              </div>
-            </div>
-          </div>
+
+        <!-- Dynamic Grid Container -->
+        <div class="today__grid" id="todays-picks-grid" role="region" aria-live="polite">
+          <!-- Populated dynamically by search-filter.js -->
         </div>
-        <div class="today__more">
-          <button>LOAD MORE</button>
+
+        <div class="today__load-more">
+          <button type="button" id="load-more-btn">Load More NFTs</button>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer__info">
-        <div class="footer__info--logo">
-          <img src="./assets/img/Logo.svg" alt="Axies Logo" />
-        </div>
-        <div class="footer__info--subtitle">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__grid">
+        <!-- Brand Information -->
+        <div class="footer__brand">
+          <a href="#top" class="footer-logo" aria-label="Axies Home">
+            <img src="./assets/img/Logo.svg" alt="Axies NFT Marketplace" class="logo-dark" width="135" height="36" />
+            <img src="./assets/img/Logo-light.svg" alt="Axies NFT Marketplace" class="logo-light" width="135" height="36" />
+          </a>
           <p>
-            Lorem ipsum dolor sit amet <br />
-            consectetur adipisicing elit. <br />
-            Aspernatur optio officia <br />
-            corrupti ea maxime velit.
+            The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Discover, trade, and invest in exclusive digital items.
           </p>
+          <div class="footer__socials" id="social-links" aria-label="Axies Social Media Channels">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Connect on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" aria-label="Join our Telegram community">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 2L2 9.5l6 2.5 2 6 3-3.5 5 3.5 3.5-16zM8.5 12l9-6-7 7-.5 3-1.5-4z"></path></svg>
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div class="footer__column">
+          <h5>My Account</h5>
+          <ul>
+            <li><a href="#top-sellers">Authors & Creators</a></li>
+            <li><a href="#popular-collections">Featured Collections</a></li>
+            <li><a href="#todays-picks">Marketplace Listings</a></li>
+            <li><a href="#wallet-modal" onclick="document.querySelector('#wallet-connect-btn').click(); return false;">Connect Wallet</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div class="footer__column">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#features">Platform Setup</a></li>
+            <li><a href="#live-auctions">Live Auctions</a></li>
+            <li><a href="#features">Smart Contracts</a></li>
+            <li><a href="#features">Help & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 3 -->
+        <div class="footer__column">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#hero-heading">Explore Axies</a></li>
+            <li><a href="#features">About Platform</a></li>
+            <li><a href="#social-links">Our Community</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription Column -->
+        <div class="footer__subscribe" id="footer-newsletter">
+          <h5>Subscribe to Our Newsletter</h5>
+          <p>
+            Get the latest drops, exclusive artist interviews, and market insights delivered directly to your inbox.
+          </p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <label for="newsletter-email" class="sr-only">Enter your email address</label>
+            <input
+              type="email"
+              name="email"
+              id="newsletter-email"
+              placeholder="Enter your email..."
+              autocomplete="email"
+              required
+            />
+            <button type="submit" aria-label="Subscribe to newsletter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+          <div class="newsletter-feedback" id="newsletter-feedback" role="status" aria-live="polite"></div>
         </div>
       </div>
-      <div class="footer__menu">
-        <h5>My Account</h5>
-        <ul>
-          <li>Authors</li>
-          <li>Collection</li>
-          <li>Author Profile</li>
-          <li>Create Item</li>
-        </ul>
-      </div>
-      <div class="footer__menu">
-        <h5>Resources</h5>
-        <ul>
-          <li>Help & Support</li>
-          <li>Live Auctions</li>
-          <li>Item Details</li>
-          <li>Activity</li>
-        </ul>
-      </div>
-      <div class="footer__menu">
-        <h5>Company</h5>
-        <ul>
-          <li>Explore</li>
-          <li>Contact Us</li>
-          <li>Our Blog</li>
-          <li>FAQ</li>
-        </ul>
-      </div>
-      <div class="footer__us">
-        <h5>Subscribe Us</h5>
-        <div class="email">
-          <input type="email" name="email" id="email" placeholder="Subscribe" />
-          <i class="fa-solid fa-paper-plane"></i>
-        </div>
-        <div class="footer__us--socialmedia">
-          <a href="#twitter">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a href="#facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="#telegram">
-            <i class="fa-brands fa-telegram"></i>
-          </a>
-          <a href="#youtube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-          <a href="#tiktok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-          <a href="#discord">
-            <i class="fa-brands fa-discord"></i>
-          </a>
-        </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer__bottom" id="contact">
+        <p class="copyright">
+          &copy; 2026 Axies NFT Marketplace. Designed with Dan Salahi & Sina Sangiji. All rights reserved.
+        </p>
+        <a href="#top" class="back-to-top" aria-label="Back to top of page">
+          Back to Top
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
       </div>
     </footer>
 
-    <script>
-      const swiper = new Swiper(".swiper", {
-        slidesPerView: 5,
-        spaceBetween: 10,
-        freeMode: true,
-        autoplay: {
-          delay: 1500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        loop: true,
-        // Optional parameters
-        // direction: "horizontal",
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-      </script>
-      <script src="./app.js"></script>
+    <!-- Accessible Wallet Connect Dialog Modal -->
+    <dialog id="wallet-modal" class="modal-dialog" aria-labelledby="wallet-modal-title">
+      <div class="modal-dialog__header">
+        <h3 id="wallet-modal-title">Connect Your Wallet</h3>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close wallet connection dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <p class="modal-dialog__subtitle">
+        Connect with one of our available wallet providers or create a new one to start collecting and bidding on Axies NFTs.
+      </p>
+
+      <div class="modal-dialog__providers">
+        <!-- MetaMask -->
+        <button type="button" class="modal-dialog__provider-btn" data-provider="MetaMask">
+          <div class="provider-info">
+            <img src="./assets/img/icon/wallet.svg" alt="" aria-hidden="true" width="24" height="24" />
+            <span>MetaMask</span>
+          </div>
+          <span class="provider-badge">Connect</span>
+        </button>
+
+        <!-- Coinbase Wallet -->
+        <button type="button" class="modal-dialog__provider-btn" data-provider="Coinbase">
+          <div class="provider-info">
+            <img src="./assets/img/icon/features-1.svg" alt="" aria-hidden="true" width="24" height="24" />
+            <span>Coinbase Wallet</span>
+          </div>
+          <span class="provider-badge">Connect</span>
+        </button>
+
+        <!-- WalletConnect -->
+        <button type="button" class="modal-dialog__provider-btn" data-provider="WalletConnect">
+          <div class="provider-info">
+            <img src="./assets/img/icon/features-3.svg" alt="" aria-hidden="true" width="24" height="24" />
+            <span>WalletConnect</span>
+          </div>
+          <span class="provider-badge">Connect</span>
+        </button>
+      </div>
+
+      <div class="modal-dialog__status" id="wallet-modal-status" role="status">
+        Choose your preferred wallet provider to connect.
+      </div>
+    </dialog>
+
+    <!-- Application Script Entrypoint (Universal Compatibility: works in file:// and http://) -->
+    <script src="./app.js" defer></script>
   </body>
 </html>

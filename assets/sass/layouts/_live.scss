@@ -1,22 +1,60 @@
 .live {
-  @include flexBetween(column);
-  background-color: black;
-  margin: 3rem 0;
-  padding: 5rem 8rem;
+  margin: clamp(4rem, 8vw, 8rem) var(--container-padding);
 
   &__title {
-    @include flexBetween(row);
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.8rem;
+    flex-wrap: wrap;
+    gap: 1.6rem;
 
-    button {
-      padding: 0 0 0.5rem;
-      border-radius: 0;
-      border: none;
-      border-bottom: 1px solid $purple;
-      background-color: black;
-      font-size: 1.4rem;
+    h2 {
+      margin: 0;
+    }
+
+    .live__nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .carousel-nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      padding: 0;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: all var(--transition-fast);
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      &:hover:not(:disabled) {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #ffffff;
+        box-shadow: var(--shadow-sm);
+        transform: translateY(-1px);
+      }
+
+      &:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
     }
   }
-  // &__content {
-  // }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0 2rem;
+  }
 }

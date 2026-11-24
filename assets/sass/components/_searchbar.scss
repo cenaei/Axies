@@ -1,29 +1,86 @@
 .header__search {
   position: relative;
-  img {
-    border: 1px solid $purple;
-    padding: 1rem;
-    border-radius: 50%;
-    color: $purple;
-    transition: background 0.5s ease-in-out;
-    &:hover {
-      cursor: pointer;
-      background-color: $purple;
+  display: flex;
+  align-items: center;
+
+  .search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+
+    svg, img {
+      width: 1.8rem;
+      height: 1.8rem;
     }
-    &:hover input {
-      visibility: block;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #ffffff;
+      svg, img {
+        filter: brightness(0) invert(1);
+      }
     }
   }
-  input {
-    position: absolute;
-    visibility: hidden;
-    background: $purpleDarker;
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
-    border-radius: 1.3rem;
+
+  input[type="search"] {
+    width: 22rem;
+    height: 4rem;
+    padding: 0.8rem 1.6rem 0.8rem 4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 1.4rem;
+    color: var(--color-text);
     outline: none;
+    transition: all var(--transition-base);
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
     &:focus {
-      background: $purpleDark;
+      width: 26rem;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-primary-light);
+    }
+
+    @include mobile {
+      width: 16rem;
+      &:focus {
+        width: 18rem;
+      }
+    }
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .search-input-icon {
+      position: absolute;
+      left: 1.4rem;
+      pointer-events: none;
+      color: var(--color-text-muted);
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 }

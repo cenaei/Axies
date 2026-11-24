@@ -1,32 +1,108 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Orbitron:wght@500;600;700;800;900&display=swap");
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-}
-
-footer,
-header,
-nav,
-section,
-main {
-  display: block;
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  line-height: 1;
-  background-color: $background;
-  color: $fullWhite;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Theme-Adaptive Logos */
+.logo-dark {
+  display: block !important;
+}
+
+.logo-light {
+  display: none !important;
+}
+
+[data-theme="light"] {
+  .logo-dark {
+    display: none !important;
+  }
+  .logo-light {
+    display: block !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    .logo-dark {
+      display: none !important;
+    }
+    .logo-light {
+      display: block !important;
+    }
+  }
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 2rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 1.2rem 2.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1.4rem;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+  box-shadow: var(--shadow-lg);
+
+  &:focus {
+    top: 2rem;
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+  }
+}
+
+/* Accessible Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 ol,
@@ -34,31 +110,83 @@ ul {
   list-style: none;
 }
 
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
 }
 
 button {
-  background-color: $background;
-  color: $white;
-  border: 2px solid $purple;
-  border-radius: 3rem;
-  margin: 0.3rem;
-  padding: 1.4rem 3.6rem;
-  transition: background 0.5s ease-in-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.8rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+
   &:hover {
-    cursor: pointer;
-    background-color: $purple;
-    color: $background;
-    img {
-      color: $background;
-    }
+    background-color: var(--color-primary);
+    color: #ffffff;
+    box-shadow: var(--shadow-glow);
+  }
+
+  &:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
 h2 {
+  font-size: clamp(2.4rem, 3.5vw, 3.2rem);
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 600;
 }

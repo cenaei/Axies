@@ -1,47 +1,120 @@
 .seller {
-  @include flexBetween(column);
-  margin: 3rem 8rem;
+  margin: clamp(4rem, 8vw, 8rem) var(--container-padding);
 
   &__title {
-    align-self: flex-start;    
+    margin-bottom: 2.8rem;
+
+    h2 {
+      margin: 0;
+    }
   }
 
-  &__content {
+  &__grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 7rem;
-    grid-row-gap: 2rem;
+    gap: 2rem;
 
-    img {
-      width: 8.5rem;
-      border-radius: 3rem;
+    @include desktop-sm {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-      &:hover {
-        border-radius: 4rem;
-      }
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 680px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
     }
   }
 
-  &__profile {
-    @include flexBetween(row);
+  &__card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.6rem;
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base);
 
-    &--content {
-      @include flexBetween(column);
+    &:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-border-hover);
+      box-shadow: var(--shadow-md);
     }
-    
-    li {
-      align-self: flex-start;
-      margin: 1rem 0;
-      font: {
-        size: 1.4rem;
-        weight: 400;
+
+    .seller-rank {
+      position: absolute;
+      top: -0.8rem;
+      left: 1.2rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--color-primary-gradient);
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    &--avatar {
+      position: relative;
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-fast);
+      }
+
+      &:hover img {
+        transform: scale(1.08);
+      }
+
+      .verified-icon {
+        position: absolute;
+        bottom: 0.2rem;
+        right: 0.2rem;
+        width: 1.6rem;
+        height: 1.6rem;
       }
     }
-    &--price {
-      font: {
-        size: 1rem;
-        weight: 300;
+
+    &--info {
+      flex: 1;
+      min-width: 0;
+
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--color-text);
+      }
+
+      .volume {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--color-accent-gold);
       }
     }
   }

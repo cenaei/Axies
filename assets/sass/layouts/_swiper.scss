@@ -1,93 +1,262 @@
+.carousel-wrapper,
 .swiper {
-  width: 1400px; //temp
-  height: 400px; //temp
+  position: relative;
+  width: 100%;
 }
 
-.myswiper {
-  @include flexCenter(column);
-  background-color: $background-gray;
-  border-radius: 3rem;
-  padding: 2rem;
+.carousel-track,
+.swiper-wrapper {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.4rem 0.2rem 1.6rem;
 
-  &:hover .myswiper__picture {
-    transform: scale(1.1);
-    overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.myswiper,
+.swiper-slide {
+  flex: 0 0 calc(25% - 1.5rem);
+  scroll-snap-align: start;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+
+  @include desktop-sm {
+    flex: 0 0 calc(33.333% - 1.4rem);
+  }
+
+  @include tablet {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  @include mobile {
+    flex: 0 0 calc(82% - 1rem);
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
   }
 
   &__picture {
-    transition: transform 0.2s;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+    aspect-ratio: 1 / 1;
+
     img {
-      border-radius: 3rem;
-      width: 20rem; //temp
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.06);
+    }
+
+    .countdown-badge {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11, 11, 20, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      .pulse-dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: var(--color-accent-green);
+        animation: pulseLive 2s infinite;
+      }
     }
   }
 
   &__title {
-    align-self: flex-start;
-    margin: 1.5rem 0;
-    font: {
-      size: 1.4rem;
-      weight: 500;
-    }
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-text);
   }
 
   &__profile {
-    @include flexBetween(row);
-    width: 100%;
-    img {
-      width: 6rem;
-      border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.6rem;
+
+    &--avatar {
+      position: relative;
+      width: 4.4rem;
+      height: 4.4rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .verified-badge {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
     }
 
     &--name {
-      justify-self: flex-start;
-      font: {
-        size: 1.4rem;
-        weight: 400;
-      }
+      flex: 1;
+      min-width: 0;
+
       p {
         font-size: 1.2rem;
+        color: var(--color-text-muted);
+        line-height: 1.2;
+      }
+
+      .name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--color-text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
     &--label {
       button {
-        padding: 0.2rem 1.1rem;
+        padding: 0.4rem 1rem;
         font-size: 1.1rem;
-        color: $fullWhite;
-        background-color: $purple;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-primary-light);
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        font-weight: 700;
+        cursor: default;
+
+        &:hover {
+          background: var(--color-primary);
+          color: #ffffff;
+        }
       }
     }
   }
 
   &__bid {
-    @include flexBetween(row);
-    font-size: 1.7rem;
-    width: 100%;
-    margin: 1rem 0;
-    .price {
-      font-size: 1.6rem;
-      margin-top: 0.5rem;
-      span {
-        font-size: 1.4rem;
-        color: #a7a7a7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--color-border);
+
+    &--price {
+      .current {
+        font-size: 1.2rem;
+        color: var(--color-text-muted);
+        line-height: 1.2;
+      }
+
+      .price {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-accent-gold);
+
+        span {
+          font-family: var(--font-body);
+          font-size: 1.2rem;
+          color: var(--color-text-secondary);
+          font-weight: 400;
+          margin-left: 0.4rem;
+        }
       }
     }
 
     &--like {
-      button {
-        padding: 1rem 1.3rem;
-        font-size: 1.1rem;
-        color: $fullWhite;
-        background-color: $black;
-        border: {
-          color: $black;
-          radius: 0.7rem;
+      .like-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.2rem;
+        border-radius: var(--radius-full);
+        background: var(--color-surface-hover);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        transition: all var(--transition-fast);
+
+        svg {
+          width: 1.4rem;
+          height: 1.4rem;
+          transition: transform var(--transition-fast), fill var(--transition-fast);
         }
+
         &:hover {
-          color: red;
+          color: var(--color-accent-red);
+          border-color: rgba(239, 68, 68, 0.3);
+          background: rgba(239, 68, 68, 0.1);
+        }
+
+        &.liked {
+          color: var(--color-accent-red);
+          border-color: rgba(239, 68, 68, 0.3);
+          background: rgba(239, 68, 68, 0.15);
+
+          svg {
+            fill: var(--color-accent-red);
+            transform: scale(1.15);
+          }
         }
       }
     }
+  }
+}
+
+@keyframes pulseLive {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
   }
 }

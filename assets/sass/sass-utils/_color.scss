@@ -1,17 +1,29 @@
-$fullWhite: #fff;
-$white: #fcfcfc;
-$gray: #f7f7f7;
-$darkGray: #ADADB0;
-$black: #202020;
-$background: #14141F;
-$background-gray: #343444;
-$purple: #4E3FEE;
-$purple-text: #9550E5;
-$purpleDark: #4b1f7d;
-$purpleDarker: #3d156b;
-$gray-text: #ADADB0;
-$blue-f: #5142FB;
-$green-f: #46A433;
-$purple-f: #9835FB;
-$red-f: #DF4949;
-$loader-bg: #e8e8e8;
+/* Semantic Theme Colors backed by CSS Custom Properties */
+$background: var(--color-bg);
+$background-secondary: var(--color-bg-secondary);
+$background-gray: var(--color-surface-card);
+$surface: var(--color-surface);
+$surface-hover: var(--color-surface-hover);
+$border-color: var(--color-border);
+$border-hover: var(--color-border-hover);
+
+$fullWhite: var(--color-text);
+$white: var(--color-text);
+$gray: var(--color-bg-secondary);
+$darkGray: var(--color-text-secondary);
+$gray-text: var(--color-text-secondary);
+$black: var(--color-surface);
+
+$purple: var(--color-primary);
+$purple-hover: var(--color-primary-hover);
+$purple-text: var(--color-secondary);
+$purpleDark: var(--color-primary-active);
+$purpleDarker: var(--color-surface-active);
+
+$blue-f: var(--color-primary);
+$green-f: var(--color-accent-green);
+$purple-f: var(--color-secondary);
+$red-f: var(--color-accent-red);
+$gold-f: var(--color-accent-gold);
+
+$loader-bg: var(--loader-bg);

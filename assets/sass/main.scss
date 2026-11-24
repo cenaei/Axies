@@ -1,3 +1,4 @@
+@import "./sass-utils/tokens";
 @import "./sass-utils/variables";
 @import "./sass-utils/color";
 @import "./sass-utils/mixin";
@@ -7,12 +8,15 @@
 @import "./base/base";
 
 @import "./components/searchbar";
+@import "./components/modal";
+@import "./components/toast";
+@import "./components/theme-switch";
 
 @import "./layouts/header";
 @import "./layouts/hero";
-@import "./layouts/features"; //Blow the Hero
+@import "./layouts/features";
 @import "./layouts/live";
-@import "./layouts/swiper"; // in Live Auctions
+@import "./layouts/swiper";
 @import "./layouts/popular";
 @import "./layouts/seller";
 @import "./layouts/todays";
