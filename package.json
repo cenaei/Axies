@@ -19,5 +19,8 @@
     "vanilla-js"
   ],
   "author": "Sina Sangiji",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.18.1"
+  }
 }

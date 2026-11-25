@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import path from 'path';
 import fs from 'fs';
+import http from 'http';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,9 +22,42 @@ if (!chromePath) {
   process.exit(1);
 }
 
-console.log(`Using browser executable: ${chromePath}`);
+// Simple static HTTP server to avoid file:// security quirks and networkidle hangs
+const mimeTypes = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2',
+  '.woff': 'font/woff'
+};
+
+const server = http.createServer((req, res) => {
+  console.log(`[REQ] ${req.method} ${req.url}`);
+  let reqPath = decodeURI(req.url.split('?')[0]);
+  if (reqPath === '/') reqPath = '/index.html';
+  const filePath = path.join(rootDir, reqPath);
+
+  if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+    console.log(`[404] ${filePath}`);
+    res.writeHead(404);
+    res.end('Not Found');
+    return;
+  }
+
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = mimeTypes[ext] || 'application/octet-stream';
+  res.writeHead(200, { 'Content-Type': contentType });
+  fs.createReadStream(filePath).pipe(res);
+});
 
 async function capture() {
+  await new Promise(resolve => server.listen(3456, '127.0.0.1', resolve));
+  console.log('Local server listening at http://127.0.0.1:3456');
+
   const browser = await puppeteer.launch({
     executablePath: chromePath,
     headless: 'new',
@@ -36,47 +70,52 @@ async function capture() {
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-gpu',
-      '--disable-dev-shm-usage',
-      '--allow-file-access-from-files'
+      '--disable-dev-shm-usage'
     ]
   });
 
   try {
     const page = await browser.newPage();
-    const indexUrl = 'file:///' + path.join(rootDir, 'index.html').replace(/\\/g, '/');
-    console.log(`Navigating to: ${indexUrl}`);
-    await page.goto(indexUrl, { waitUntil: 'networkidle0', timeout: 20000 });
+    console.log('Navigating to http://127.0.0.1:3456/index.html');
+    await page.goto('http://127.0.0.1:3456/index.html', { waitUntil: 'domcontentloaded', timeout: 10000 });
+    console.log('DOM content loaded.');
 
-    // Dismiss splash screen and enforce Dark Mode
-    await page.evaluate(() => {
+    // Wait for fonts & dismiss splash screen & enforce Dark Mode initially
+    await page.evaluate(async () => {
+      try {
+        await document.fonts.ready;
+      } catch (e) {}
       const splash = document.querySelector('.splash-screen');
       if (splash) splash.classList.add('hidden');
-      document.documentElement.setAttribute('data-theme', 'dark');
-      const toggle = document.querySelector('#theme-toggle-cb');
-      if (toggle) toggle.checked = false;
+      const toggle = document.querySelector('#theme-switch-checkbox');
+      if (toggle && !toggle.checked) {
+        toggle.click();
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (toggle) toggle.checked = true;
+      }
     });
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 800));
 
     // 1. Dark Mode Screenshot
     const darkPath = path.join(rootDir, 'Screenshot-dark.png');
     const heroPath = path.join(rootDir, 'Screenshot.png');
     await page.screenshot({ path: darkPath, type: 'png' });
     fs.copyFileSync(darkPath, heroPath);
-    console.log(`Captured Dark Mode screenshot -> ${darkPath} & ${heroPath}`);
+    console.log(`Captured Dark Mode screenshot -> ${darkPath}`);
 
-    // 2. Switch to Light Mode via CoolThemeSwitch checkbox toggle
+    // 2. Switch to Light Mode via CoolThemeSwitch toggle
     await page.evaluate(() => {
-      const toggle = document.querySelector('#theme-toggle-cb');
+      const toggle = document.querySelector('#theme-switch-checkbox');
       if (toggle) {
-        toggle.checked = true;
-        toggle.dispatchEvent(new Event('change', { bubbles: true }));
+        toggle.click();
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
       }
     });
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 800));
 
     // 3. Light Mode Screenshot
     const lightPath = path.join(rootDir, 'Screenshot-light.png');
@@ -86,10 +125,12 @@ async function capture() {
     console.log('All screenshots captured successfully!');
   } finally {
     await browser.close();
+    server.close();
   }
 }
 
 capture().catch(err => {
   console.error('Screenshot capture failed:', err);
+  server.close();
   process.exit(1);
 });
